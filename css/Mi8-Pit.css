@@ -1,0 +1,318 @@
+/*  ----------------------------------------  */
+/* Feuille de style KaTZ-Pit  Mi-8          */
+/* Définir dans BODY, le motif d'arrière plan */
+/* Définir pour chaque Panel :                */ 
+/*  - La position sur la feuille              */
+/*  - Le formatage des affichage numériques : */
+/*     # Font                                 */
+/*     # Couleur                              */
+/*     # Alignement ...                       */
+/*  ----------------------------------------  */
+
+
+
+html{
+	font-size: 100%;
+}
+
+
+body {
+	background-color: #333333; 
+	/*background-image: url(Z_Carbon4.gif); */
+	margin: 5px 5px 5px 5px;
+	
+	font-family: arial, sans-serif;
+	font-size: 100%;
+	color: #FFFF33;
+	text-align: left;
+}
+
+p {
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: left;
+	margin-left:5px;
+	margin-right:5px;
+}
+
+/* Jauge Moteur                                              */
+/* Pour changer position, ajuster top: et left:              */
+/* Pour changer l'affichage des rpm, ajuster font, color ... */
+
+
+#Cadran_AltiRad {
+	position: absolute;
+	top: 10px;
+	left: 230px;
+	/* Dimension 400 x 300			              */
+}
+
+#Cadran_Pitch {
+	position: absolute;
+	top: 500px;
+	left: 30px;
+	/* Dimension 400 x 400			              */
+}
+
+
+#Gauge_Power {
+	position: absolute;
+	top: 720px;
+	left: 40px;
+	/* Dimension 400 x 400			              */
+}
+
+#Cadran_RPM {
+	position: absolute;
+	top: 380px;
+	left: 270px;
+	/* Dimension 400 x 400			              */
+}
+
+#Cadran_RPM2 {
+	position: absolute;
+	top: 660px;
+	left: 270px;
+	/* Dimension 400 x 400			              */
+}
+
+
+#Cadran_Altitude {
+	position: absolute;
+	top: 130px;
+	left: 660px;
+	/* Dimension 400 x 400			              */
+}
+
+
+#Cadran_AirSpeed {
+	position: absolute;
+	top: 450px;
+	left: 600px;
+	/* Dimension 400 x 400			              */
+}
+
+
+
+
+#Cadran_HSI {
+	position: absolute;
+	top: 10px;
+	left: 970px;
+	/* Dimension 400 x 400			              */
+}
+
+#Cadran_ADI {
+	position: absolute;
+	top: 400px;
+	left: 920px;
+	/* Dimension 400 x 400			              */
+	text-align: center; 
+}
+
+#Cadran_Bille {
+	position: absolute;
+	top: 810px;
+	left: 990px;
+	/* Dimension 400 x 400			              */
+}
+
+#Cadran_Stationnaire {
+	position: absolute;
+	top: 30px;
+	left: 1300px;
+	/* Dimension 400 x 400			              */
+}
+
+#Cadran_Vario {
+	position: absolute;
+	top: 450px;
+	left: 1350px;
+	/* Dimension 400 x 400			              */
+}
+
+
+#Cadran_Drift {
+	position: absolute;
+	top: 760px;
+	left: 1350px;
+	/* Dimension 400 x 400 */	
+	text-align: center; 		              
+}
+
+
+#Panel_Connection {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	/* Dimension 100 x 775			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+#Panel_Launcher {
+
+	position: absolute;
+	top: 10px;
+	left: 1700px;
+	/* Dimension 100 x 775			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+#Panel_Circuit_Breaker {
+	position: absolute;
+	top: 10px;
+	left: 1850px;
+	/* Dimension 250 x 150			              */
+	
+}
+
+#Panel_Electric_DC {
+	position: absolute;
+	top: 170px;
+	left: 1810px;
+	/* Dimension 500 x 300			              */
+	
+}
+
+#Panel_Electric_AC {
+	position: absolute;
+	top: 580px;
+	left: 1810px;
+	/* Dimension 250 x 450			              */
+	
+}
+
+#Panel_APU {
+	position: absolute;
+	top: 170px;
+	left: 2320px;
+	/* Dimension 500 x 250			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+#Panel_Start {
+	position: absolute;
+	top: 430px;
+	left: 2320px;
+	/* Dimension 500 x 400			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+#Panel_Fuel {
+	position: absolute;
+	top: 820px;
+	left: 1810px;
+	/* Dimension 500 x 250		              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+
+
+#Panel_Rotor {
+	position: absolute;
+	top: 870px;
+	left: 10px;
+	/* Dimension 340 x 200			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+
+#Panel_Oil {
+	position: absolute;
+	top: 850px;
+	left: 570px;
+	/* Dimension 400 x 200			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+
+
+#Panel_ARK_9 {
+	position: absolute;
+	top: 10px;
+	left: 1810px;
+	/* Dimension 500 x 400	*/
+	text-align: right; 
+	
+}
+
+#Panel_ARK_UD {
+	position: absolute;
+	top: 410px;
+	left: 1810px;
+	/* Dimension 500 x 400			              */
+	
+}
+
+#Panel_Doppler{
+	position: absolute;
+	top: 810px;
+	left: 1810px;
+	/* Dimension 250 x 250 */		
+	color:white;
+	background-color:transparent;
+	text-align: center; 	        
+}
+
+
+
+#Panel_Radio {
+	position: absolute;
+	top: 10px;
+	left: 1810px;
+	/* Dimension 775 x 10			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
+
+
+
+
+
+
+
+
+
+

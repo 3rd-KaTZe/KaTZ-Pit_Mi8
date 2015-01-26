@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html>
+<!-- KaTZ-Pit V5000 Q1-2015, 3rd Wing KaTZe : Remi Perrin -->
+<!-- Mi-8 Panel V009 2015/01 -->
+
+
+
+
+<head>
+	<meta charset="utf-8" />
+	<title>KaTZ-Pit Mi-8</title>
+	
+	<meta name="description" content="Online Virtual Panel" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<!-- Style -->
+	<link href="css/Mi8-Pit.css" rel="stylesheet" media="all" type="text/css">
+
+	<!--Scripts library-->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/serverws.js"></script>
+	
+	<script type="text/javascript" src="js/dataread.js"></script>
+	<script type="text/javascript" src="js/function_calcul.js"></script>
+	<script type="text/javascript" src="js/function_commande.js"></script>
+	<script type="text/javascript" src="js/function_convert_scale.js"></script>
+
+	<script type="text/javascript" src="js/pit.js"></script>
+	<script type="text/javascript" src="js/pit_init.js"></script>
+	<script type="text/javascript" src="js/plane_init.js"></script>
+	
+	<script type="text/javascript" src="js/instrument.js"></script>
+	<script type="text/javascript" src="js/menu.js"></script>	
+
+	<script type="text/javascript" src="js/panel_apu_start.js"></script>
+	<script type="text/javascript" src="js/panel_electric.js"></script>
+	<script type="text/javascript" src="js/panel_emergency.js"></script>
+	<script type="text/javascript" src="js/panel_fuel_oil.js"></script>
+	<script type="text/javascript" src="js/panel_instrument.js"></script>
+	<script type="text/javascript" src="js/panel_navsys.js"></script>
+	<script type="text/javascript" src="js/panel_radio.js"></script>
+
+    
+</head>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<body>
+  
+  <!-- chargement du tableau de bord -->
+  <!-- le tableau de bord est positionné grace à la création d'une classe dans la .CSS -->
+  <!-- les boutons, voyants, affichage, sont positionné relativement au Panel -->
+  <!-- en ajustant la position du panel, les objets "suivent" :-) -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+
+<div id="Cadran_AltiRad">
+	<img src="images/analog/Altirad.gif" width="400" height="340" usemap="#Altirad"> 
+
+	<!-- Mapping du bouton de démarrage de l'altirad-->
+	<map name="Altirad">
+		<area shape="rect" coords="15,160,60,200" href="javascript:CmdDCSRaw('11800301')">
+		<area shape="rect" coords="15,290,60,330" href="javascript:CmdDCSRaw('11800300')">
+	</map>
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 80px; top: 20px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_Altirad">
+	</SPAN>	
+
+	<!-- Aiguille Index -->
+	<SPAN style="position: absolute; left: 80px; top: 20px; width: 300px; height: 300px">
+	<img src="images/analog/Altirad_Index.gif" width="300" height="300" id="INDX_Altirad">
+	</SPAN>
+	
+	<!-- Voyant Low -->
+	<SPAN style="position: absolute; left: 30px; top: 30px; width: 50px; height: 50px">
+	<img src="images/analog/Altirad_Low.gif" width="50" height="50" id="LOW_Altirad">
+	</SPAN>
+	
+	<!-- Selecteur On/Off -->
+	<SPAN style="position: absolute; left: 0px; top: 210px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-D3.gif" width="80" height="80" id="On_Altirad">
+	</SPAN>
+
+</div>
+
+
+<div id="Cadran_Pitch">
+	<img src="images/analog/Pitch.gif" width="200" height="200"  >
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 200px; height: 200px">
+	<img src="images/M_Aiguille.gif" width="200" height="200" id="AIG_Pitch">
+	</SPAN>		
+
+</div>
+
+
+<div id="Gauge_Power">
+	<img src="images/analog/Power-Gauge.gif" width="170" height="170"  >
+
+	<!-- Gauge de Puissance Moteur -->
+	<SPAN style="position: absolute; left: 52px; top: 25px; width: 22px; height: 125px">
+	<img src="images/rotor/Rot_Gauge.gif" width="15" height="125"   id="R_Power_L">
+	</SPAN>
+
+	<SPAN style="position: absolute; left: 127px; top: 25px; width: 22px; height: 125px">
+	<img src="images/rotor/Rot_Gauge.gif" width="15" height="125"   id="R_Power_R">
+	</SPAN>
+	
+	<SPAN style="position: absolute; left: 65px; top: 125px; width: 70px; height: 59px">
+	<img src="images/rotor/Rot_Index_8.gif" width="70" height="59"   id="R_Power_X">
+	</SPAN>
+
+</div>
+
+
+<div id="Cadran_RPM">
+	<img src="images/analog/rpm.gif" width="250" height="250"  > 
+
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
+	<img src="images/M_Aiguille.gif" width="250" height="250" id="AIG_RPM_Rot">
+	</SPAN>		
+
+</div>
+
+
+<div id="Cadran_RPM2">
+	<img src="images/analog/rpm.gif" width="250" height="250"  > 
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
+	<img src="images/engine/M_Aiguille_L.gif" width="250" height="250" id="AIG_RPM_Eng_L">
+	</SPAN>	
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
+	<img src="images/engine/M_Aiguille_R.gif" width="250" height="250" id="AIG_RPM_Eng_R">
+	</SPAN>	
+
+</div>
+
+
+<div id="Cadran_Altitude">
+	<img src="images/analog/Altitude.gif" width="300" height="300"  >
+
+	<!-- Aiguille 0-1000 -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_Altitude">
+	</SPAN>		
+	<!-- Aiguille 0-10000 -->
+	<SPAN style="position: absolute; left: 50px; top: 50px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="200" height="200" id="AIG_Alti1000">
+	</SPAN>		
+
+</div>
+
+
+ <div id="Cadran_AirSpeed">
+	<img src="images/analog/AirSpeed.gif" width="300" height="300"  >  
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_Airspeed">
+	</SPAN>
+	
+</div>
+ 
+
+<div id="Cadran_Bille">
+	<img src="images/analog/Deviation.gif" width="250" height="250"  > 
+	
+	<!-- Bille -->
+	<SPAN style="position: absolute; left: -25px; top: -110px; width: 300px; height: 300px">
+	<img src="images/analog/Bille-Aiguille_B.gif" width="300" height="300" id="Bille_Bille">
+	</SPAN>
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: -50px; top: 60px; width: 300px; height: 300px">
+	<img src="images/analog/Bille-Aiguille_A.gif" width="350" height="350" id="AIG_Bille">
+	</SPAN>
+    
+</div>
+
+
+<div id="Cadran_HSI">
+	<img src="images/analog/HSI-outer.gif" width="300" height="380"  usemap="#C_HSI"> 
+
+	<!-- Mapping du bouton de selection de fréquence HSI : MW/VHF , ARK-9/ARK-UD-->
+	<map name="C_HSI">
+		<area shape="rect" coords="40,320,120,380" href="javascript:CmdDCSRaw('13400300')">
+		<area shape="rect" coords="180,320,260,380" href="javascript:CmdDCSRaw('13400301')">
+	</map> 
+	
+	<!-- Aiguille -->
+	<!-- HSI + switch Vario -->
+	<SPAN style="position: absolute; left: 50px; top: 50px; width: 201px; height: 201px">
+	<img src="images/analog/N_HSI_Rosace.gif" width="201" height="201"   id="AN_Rosace">
+	</SPAN>
+
+	<SPAN style="position: absolute; left: 50px; top: 50px; width: 201px; height: 201px">
+	<img src="images/analog/N_HSI_Way.gif" width="201" height="201"   id="AN_Way">
+	</SPAN>
+
+	<SPAN style="position: absolute; left: 50px; top: 50px; width: 201px; height: 201px">
+	<img src="images/analog/N_HSI_Route.gif" width="201" height="201"   id="AN_Route">
+	</SPAN>
+	
+	<!-- Selecteur MW/VHF -->
+	<SPAN style="position: absolute; left: 110px; top: 310px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-R2.gif" width="80" height="80" id="HSI_mwvhf">
+	</SPAN>
+    
+</div>
+
+
+<div id="Cadran_ADI">
+
+	<img src="images/analog/ADI.gif" width="400" height="400"  > 
+	
+	<!-- Pitch Top -->
+	<SPAN style="position: absolute; left: 60px; top: 64px; width: 280px; height: 140px">
+	<img src="images/analog/ADI-Top.gif" width="280" height="140" id="ADI_Pitch_T">
+	</SPAN>
+	
+	<!-- Pitch Center -->
+	<SPAN style="position: absolute; left: 60px; top: 189px; width: 280px; height: 4px">
+	<img src="images/analog/ADI-Center.gif" width="280" height="4" id="ADI_Pitch_C">
+	</SPAN>
+	
+	<!-- Bank -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px">
+	<img src="images/analog/ADI-Bank.gif" width="400" height="400" id="ADI_Bank">
+	</SPAN>
+	
+	<!-- Couronne -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px">
+	<img src="images/analog/ADI.gif" width="400" height="400"  > 
+	</SPAN>
+
+	<!-- Bille -->
+	<SPAN style="position: absolute; left: 0px; top: -20px; width: 400px; height: 400px">
+	<img src="images/analog/ADI-Bille.gif" width="400" height="400" id="ADI_Bille">
+	</SPAN>
+
+	<!-- Taux de Pitch -->
+	<SPAN style="position: absolute; left: 160px; top: 100px; width: 80px; height: 40px ; background-color:#4682B4 ;border-style: solid;
+    border-color: grey;color:white ; font-size:200%" id="ADI_Pitch_V1"> </SPAN>
+	<SPAN style="position: absolute; left: 160px; top: 270px; width: 80px; height: 40px ; background-color:lightgrey ;color:black ; font-size:200%" id="ADI_Pitch_V2"> </SPAN>
+   
+</div>
+
+
+<div id="Cadran_Stationnaire">
+	<img src="images/analog/Stationnaire.gif" width="400" height="400"  > 
+
+	<!-- Aiguille Vario -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px">
+	<img src="images/analog/Stationnaire-Aig.gif" width="400" height="400" id="Sling_Vario">
+	</SPAN>
+
+	<!-- Off -->
+	<SPAN style="position: absolute; left: 282px; top: 77px; width: 50px; height: 50px">
+	<img src="images/analog/Stationnaire-off.gif" width="50" height="50" id="Sling_Off">
+	</SPAN>
+
+	<!-- H-Droit -->
+	<SPAN style="position: absolute; left: 243px; top: 217px; width: 78px; height: 11px">
+	<img src="images/analog/Stationnaire-DH.gif" width="78" height="11" id="Sling_D">
+	</SPAN>
+	
+	<!-- H-Gauche -->
+	<SPAN style="position: absolute; left: 108px; top: 217px; width: 78px; height: 11px">
+	<img src="images/analog/Stationnaire-DH.gif" width="78" height="11" id="Sling_G">
+	</SPAN>
+
+	<!-- V-Avant -->
+	<SPAN style="position: absolute; left: 209px; top: 46px; width: 12px; height: 153px">
+	<img src="images/analog/Stationnaire-DV1.gif" width="11" height="153" id="Sling_AV">
+	</SPAN>
+
+	<!-- V-Arrière -->
+	<SPAN style="position: absolute; left: 209px; top: 255px; width: 12px; height: 84px">
+	<img src="images/analog/Stationnaire-DV2.gif" width="11" height="84" id="Sling_AR">
+	</SPAN>
+   
+</div>
+
+
+<div id="Cadran_Vario">
+	<img src="images/analog/Vario.gif" width="300" height="300"  > 
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_Vario">
+	</SPAN>	
+    
+</div>
+
+
+<div id="Cadran_Drift">
+	<img src="images/analog/Drift.gif" width="300" height="300"  > 
+	
+	<!-- Vitesse Drift -->
+	<SPAN style="position: absolute; left: 120px; top: 208px; width: 60px; height: 30px ; background-color:black ;color:lightgrey;  font-size:1.8em" id="Speed_Drift"> </SPAN>
+
+	<!-- Voyant Memory -->
+	<SPAN style="position: absolute; left: 194px; top: 115px; width: 30px; height: 30px ; color:#00FF00;  font-size:1.5em" id="Mem_Drift"> </SPAN>
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 20px; top: 20px; width: 260px; height: 260px">
+	<img src="images/Aig_drift.gif" width="260" height="260" id="AIG_Drift">
+	</SPAN>
+    
+</div>
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --> 
+<!-- Panneau de démarrage du KaTZ-Pit + Canopy + Eject -->
+<div id="Panel_Connection">
+
+	<img src="images/emergency/Connection-Panel-Mi8.gif" width="210" height="200"   usemap="#Connection_P"> 
+
+	<!-- Mapping du bouton, Demarrage KaTZ-Pit , et ouverture porte -->
+	<map name="Connection_P">
+		<area shape="circle" coords="55,75,45" href="javascript:Pit_Start(9)">
+		<area shape="rect" coords="10,150,200,190" href="javascript:Door()">
+	</map>
+
+	<!-- Voyants de connection KaTZ-Link -->
+	<SPAN style="position: absolute; left: 122px; top: 29px">
+	<img src="images/emergency/z_Led-Rouge.gif" width="80" height="40"  id="Led_Connect"> </SPAN>
+
+	<!-- Zone d'affichage de l'adresse IP -->
+	<SPAN style="position: absolute; left: 117px; top: 100px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:75%" id="IP_Host"> </SPAN>
+	<SPAN style="position: absolute; left: 120px; top: 120px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:85%" id="IP_Port"> </SPAN>
+
+</div>
+
+	
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- Panneau de selection des sub panels affichés -->
+<div id="Panel_Launcher">
+
+<img src="images/emergency/Launcher-Panel.gif" width="100" height="1050"   usemap="#Panel_Launcher"> 
+
+	<map name="Panel_Launcher">
+		
+		<area shape="rect" coords="10,20,90,80" href="javascript:menu_Toggle('Breakers')">
+		<area shape="rect" coords="10,80,90,120" href="javascript:menu_Toggle('Electric_DC')">
+		<area shape="rect" coords="10,120,90,180" href="javascript:menu_Toggle('Electric_AC')">
+		<area shape="rect" coords="10,180,90,220" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,220,90,280" href="javascript:menu_Toggle('APU')">
+		<area shape="rect" coords="10,280,90,320" href="javascript:menu_Toggle('Start')">		
+		<area shape="rect" coords="10,320,90,380" href="javascript:menu_Toggle('Vierge')">		
+		<area shape="rect" coords="10,380,90,420" href="javascript:menu_Toggle('Oil')">
+		<area shape="rect" coords="10,420,90,480" href="javascript:menu_Toggle('Rotor')">
+		<area shape="rect" coords="10,480,90,520" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,520,90,580" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,580,90,620" href="javascript:menu_Toggle('Doppler')">
+		<area shape="rect" coords="10,620,90,680" href="javascript:menu_Toggle('ARK_9')">
+		<area shape="rect" coords="10,680,90,720" href="javascript:menu_Toggle('ARK_UD')">
+		<area shape="rect" coords="10,720,90,780" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('Fuel')">
+		<area shape="rect" coords="10,820,90,880" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,880,90,920" href="javascript:menu_Toggle('Radio_360')">
+		<area shape="rect" coords="10,920,90,980" href="javascript:menu_Toggle('Vierge')">
+
+	</map>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- Panneau de selection des groupe de circuit breakers -->
+<div id="Panel_Circuit_Breaker">
+
+<img src="images/electric/Circuit-Breaker.gif" width="250" height="150" usemap="#Panel_Breakers"> 
+
+	<map name="Panel_Breakers">
+		<area shape="rect" coords="15,30,75,60" href="javascript:CmdDCSRaw('50102201')">
+		<area shape="rect" coords="15,70,75,100" href="javascript:CmdDCSRaw('50102301')">
+		<area shape="rect" coords="15,110,75,140" href="javascript:CmdDCSRaw('50102401')">
+		<area shape="rect" coords="95,30,155,60" href="javascript:CmdDCSRaw('50102501')">
+		<area shape="rect" coords="95,70,155,100" href="javascript:CmdDCSRaw('50102601')">
+		<area shape="rect" coords="95,110,155,140" href="javascript:CmdDCSRaw('50102701')">
+		<area shape="rect" coords="175,30,235,60" href="javascript:CmdDCSRaw('50102801')">
+		<area shape="rect" coords="175,70,235,100" href="javascript:CmdDCSRaw('50102901')">
+		<area shape="rect" coords="175,110,235,140" href="javascript:CmdDCSRaw('50103001')">
+		
+	</map>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- Panneau Electrique DC -->
+<div id="Panel_Electric_DC">
+
+<img src="images/electric/Electric_DC-Power_Da.gif" width="500" height="400" usemap="#Panel_DC"> 
+
+	<map name="Panel_DC">
+
+		<!-- Batterie 1, 2, StbyGen , ON/OFF -->
+		<area shape="rect" coords="20,40,80,70" href="javascript:CmdDCSRaw('10100301')">
+		<area shape="rect" coords="100,40,160,70" href="javascript:CmdDCSRaw('10100201')">
+		<area shape="rect" coords="180,40,240,70" href="javascript:CmdDCSRaw('10100101')">
+		
+		<area shape="rect" coords="20,170,80,200" href="javascript:CmdDCSRaw('10100300')">
+		<area shape="rect" coords="100,170,160,200" href="javascript:CmdDCSRaw('10100200')">
+		<area shape="rect" coords="180,170,240,200" href="javascript:CmdDCSRaw('10100100')">
+		
+
+		<!-- Rectifier 1, 2, 3, Ext PWR , APU Rec , ON/OFF-->
+		<area shape="rect" coords="20,240,80,270" href="javascript:CmdDCSRaw('10100701')">
+		<area shape="rect" coords="100,240,160,270" href="javascript:CmdDCSRaw('10100501')">
+		<area shape="rect" coords="180,240,240,270" href="javascript:CmdDCSRaw('10100601')">
+		<area shape="rect" coords="260,240,310,270" href="javascript:CmdDCSRaw('10100401')">
+		<area shape="rect" coords="340,240,390,270" href="javascript:CmdDCSRaw('10100901')">
+
+		<area shape="rect" coords="20,370,80,400" href="javascript:CmdDCSRaw('10100700')">
+		<area shape="rect" coords="100,370,160,400" href="javascript:CmdDCSRaw('10100500')">
+		<area shape="rect" coords="180,370,240,400" href="javascript:CmdDCSRaw('10100600')">
+		<area shape="rect" coords="260,370,310,400" href="javascript:CmdDCSRaw('30100400')">
+		<area shape="rect" coords="340,370,390,400" href="javascript:CmdDCSRaw('30100900')">
+						
+	</map>
+
+	<!-- Selecteur Battery 1 et 2 , On/Off -->
+	<SPAN style="position: absolute; left: 30px; top: 70px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="BAT-SW-1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 110px; top: 70px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="BAT-SW-2">
+	</SPAN>
+
+	<!-- Selecteur APU GEN , On/Off -->
+	<SPAN style="position: absolute; left: 190px; top: 70px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="APUGEN-SW">
+	</SPAN>
+	
+	<!-- Selecteur Rectifiers 1, 2, 3, On/Off -->
+	<SPAN style="position: absolute; left: 30px; top: 270px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="REC-SW-1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 110px; top: 270px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="REC-SW-2">
+	</SPAN>
+	<SPAN style="position: absolute; left: 190px; top: 270px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="REC-SW-3">
+	</SPAN>
+	
+
+	<!-- Selecteur External Power , APU Rec , On/Off -->
+	<SPAN style="position: absolute; left: 270px; top: 270px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="EXT-DC-SW">
+	</SPAN>
+	
+	<SPAN style="position: absolute; left: 350px; top: 270px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="APUREC-SW">
+	</SPAN>
+
+	<!-- Voyant Rec 1, 2, 3 -->
+	<SPAN style="position: absolute; left: 20px; top: 200px; width: 60px; height: 30px">
+	<img src="images/electric/E_Rec1-On.gif" width="60" height="30" id="E-V-REC1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 100px; top: 200px; width: 60px; height: 30px">
+	<img src="images/electric/E_Rec2-On.gif" width="60" height="30" id="E-V-REC2">
+	</SPAN>
+	<SPAN style="position: absolute; left: 180px; top: 200px; width: 60px; height: 30px">
+	<img src="images/electric/E_Rec3-On.gif" width="60" height="30" id="E-V-REC3">
+	</SPAN>
+
+	<!-- Voyant DC Ext Power -->
+	<SPAN style="position: absolute; left: 260px; top: 200px; width: 60px; height: 30px">
+	<img src="images/electric/E_ExtDC-On.gif" width="60" height="30" id="E-V-ExtDC">
+	</SPAN>
+
+	<!-- Voyant EquipTest -->
+	<SPAN style="position: absolute; left: 340px; top: 200px; width: 60px; height: 30px">
+	<img src="images/electric/E_Test-On.gif" width="60" height="30" id="E-V-Test">
+	</SPAN>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- Panneau Electrique AC -->
+<div id="Panel_Electric_AC">
+
+<img src="images/electric/Electric_AC-Power_Da.gif" width="500" height="250" usemap="#Panel_AC"> 
+
+	<map name="Panel_AC">
+
+		<!-- Generator 1, 2, Ext PWR , ON/OFF-->
+		<area shape="rect" coords="20,90,80,120" href="javascript:CmdDCSRaw('10101501')">
+		<area shape="rect" coords="100,90,160,120" href="javascript:CmdDCSRaw('10101601')">
+		<area shape="rect" coords="180,90,240,120" href="javascript:CmdDCSRaw('10101401')">
+
+		<area shape="rect" coords="20,220,80,250" href="javascript:CmdDCSRaw('10101500')">
+		<area shape="rect" coords="100,220,160,250" href="javascript:CmdDCSRaw('10101600')">
+		<area shape="rect" coords="180,220,240,250" href="javascript:CmdDCSRaw('10101400')">
+		
+
+		<!-- 115V, 36V , 3 way bouton , MAN/OFF/AUTO -->
+		<area shape="rect" coords="260,90,310,120" href="javascript:CmdDCSRaw('30101202')">
+		<area shape="rect" coords="330,90,380,120" href="javascript:CmdDCSRaw('30101302')">
+
+		<area shape="rect" coords="230,120,260,220" href="javascript:CmdDCSRaw('30101201')">
+		<area shape="rect" coords="380,120,410,220" href="javascript:CmdDCSRaw('30101301')">
+
+		<area shape="rect" coords="260,220,310,250" href="javascript:CmdDCSRaw('30101200')">
+		<area shape="rect" coords="330,220,380,250" href="javascript:CmdDCSRaw('30101300')">
+		
+	</map>
+
+
+	<!-- Selecteur Generator 1 et 2 , On/Off -->
+	<SPAN style="position: absolute; left: 30px; top: 120px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="GEN-SW-1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 110px; top: 120px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="GEN-SW-2">
+	</SPAN>
+
+	<!-- Selecteur External Power , On/Off -->
+	<SPAN style="position: absolute; left: 190px; top: 120px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="EXT-AC-SW">
+	</SPAN>
+	
+	<!-- Selecteur 115V et 36V , Auto/Off/Man -->
+	<SPAN style="position: absolute; left: 270px; top: 120px; width: 40px; height: 100px">
+	<img src="images/Switch-V-mid.gif" width="40" height="100" id="AC115V-SW">
+	</SPAN>
+	<SPAN style="position: absolute; left: 340px; top: 120px; width: 40px; height: 100px">
+	<img src="images/Switch-V-mid.gif" width="40" height="100" id="AC36V-SW">
+	</SPAN>
+
+	<!-- Voyant Gen 1 , 2 -->
+	<SPAN style="position: absolute; left: 20px; top: 50px; width: 60px; height: 30px">
+	<img src="images/electric/E_Gen1-On.gif" width="60" height="30" id="E-V-Gen1">
+	</SPAN>
+
+	<SPAN style="position: absolute; left: 100px; top: 50px; width: 60px; height: 30px">
+	<img src="images/electric/E_Gen2-On.gif" width="60" height="30" id="E-V-Gen2">
+	</SPAN>
+
+	
+	<!-- Voyant AC Ext Power -->
+	<SPAN style="position: absolute; left: 180px; top: 50px; width: 60px; height: 30px">
+	<img src="images/electric/E_ExtAC-On.gif" width="60" height="30" id="E-V-ExtAC">
+	</SPAN>
+
+	<!-- Voyant Inverter -->
+	<SPAN style="position: absolute; left: 260px; top: 50px; width: 60px; height: 30px">
+	<img src="images/electric/E_Inverter-On.gif" width="60" height="30" id="E-V-Inverter">
+	</SPAN>
+
+
+</div>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_APU">
+
+	<img src="images/apu/APU_Mi-8_D.gif" width="500" height="250"   usemap="#Panel_APU">
+	
+	<!-- Mapping de selection de démarrage et d'arrêt-->
+	<map name="Panel_APU">
+		<!-- Selection Start-->
+		<area shape="rect" coords="20,60,80,100" href="javascript:CmdDCSRaw('30301202')">
+		<!-- Selection Crank-->
+		<area shape="rect" coords="5,100,25,200" href="javascript:CmdDCSRaw('30301201')">
+		<!-- Selection False-->
+		<area shape="rect" coords="20,200,80,240" href="javascript:CmdDCSRaw('30301200')">
+		<!-- Start APU-->
+		<area shape="rect" coords="100,100,200,200" href="javascript:CmdDCSRaw('50302601')">
+		<!-- Stop APU-->
+		<area shape="rect" coords="300,100,400,200" href="javascript:CmdDCSRaw('50300701')">
+				
+	</map>
+	
+	<!-- Températures APU -->
+	<SPAN style="position: absolute; left: 100px; top: 20px; width: 80px; height: 40px ;color:grey;  font-size:1.8em" id="APU-DEG"> </SPAN>
+	<SPAN style="position: absolute; left: 320px; top: 20px; width: 80px; height: 40px ;color:grey;  font-size:1.8em" id="APU-AIR"> </SPAN>
+	
+	<!-- Voyant APU -->
+	<SPAN style="position: absolute; left: 220px; top: 130px; width: 60px; height: 30px">
+	<img src="images/apu/A_auto-ignition-On.gif" width="60" height="30"   id="APU-V-Ignition">
+	</SPAN>
+	<SPAN style="position: absolute; left: 160px; top: 210px; width: 60px; height: 30px">
+	<img src="images/apu/A_oil-press-On.gif" width="60" height="30"   id="APU-V-Oil">
+	</SPAN>
+	<SPAN style="position: absolute; left: 220px; top: 210px; width: 60px; height: 30px">
+	<img src="images/apu/A_rpm-normal-On.gif" width="60" height="30"   id="APU-V-RPM-OK">
+	</SPAN>
+	<SPAN style="position: absolute; left: 280px; top: 210px; width: 60px; height: 30px">
+	<img src="images/apu/A_rpm-high-On.gif" width="60" height="30"   id="APU-V-RPM-Hi">
+	</SPAN>
+	
+	<!-- Selecteur Type de démarrage -->
+	<SPAN style="position: absolute; left: 30px; top: 103px; width: 40px; height: 100px">
+	<img src="images/Switch-V-mid.gif" width="40" height="100"   id="APU-SW-1">
+	</SPAN>
+
+
+</div>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_Start">
+
+	<img src="images/fuel/Fuel-Panel_Mi8_D.gif" width="500" height="400"   usemap="#Panel_Start"> 
+
+	<!-- Mapping du bouton de lecture de niveau de fuel (13005101) -->
+	<!-- Switch de Type de demarrage et de Selection de moteur -->
+
+	<map name="Panel_Start">
+		<!-- Bouton Start -->
+		<area shape="rect" coords="170,280,270,380" href="javascript:CmdDCSRaw('50300501')">
+		<!-- Bonton Stop -->
+		<area shape="rect" coords="300,280,400,380" href="javascript:CmdDCSRaw('50300601')">
+		
+		<!-- Switch de Selection de moteur -->
+		<area shape="rect" coords="25,300,75,330" href="javascript:CmdDCSRaw('30300800')">
+		<area shape="rect" coords="105,300,155,330" href="javascript:CmdDCSRaw('30300802')">
+		
+		<!-- Switch de Type de demarrage -->
+		<area shape="rect" coords="420,230,480,260" href="javascript:CmdDCSRaw('30302702')">
+		<area shape="rect" coords="420,360,480,390" href="javascript:CmdDCSRaw('30302700')">
+		
+	</map>
+
+	<!-- Cut Off / Rotor Break -->
+	<SPAN style="position: absolute; left: 70px; top: 70px; width: 60px; height: 30px">
+	<img src="images/fuel/FV_Cutoff_On.gif" width="60" height="30"   id="FV-CutOff-G" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-CutOff-G')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 290px; top: 70px; width: 60px; height: 30px">
+	<img src="images/fuel/FV_Cutoff_On.gif" width="60" height="30"   id="FV-CutOff-D" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-CutOff-D')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 180px; top: 70px; width: 60px; height: 30px">
+	<img src="images/fuel/FV_RotorBtk_On.gif" width="60" height="30"   id="FV-RotBrk" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-RotBrk')">
+	</SPAN> 
+
+	<!-- Position Vannes -->
+	<SPAN style="position: absolute; left: 75px; top: 106px; width: 50px; height: 30px">
+	<img src="images/fuel/FV-Vanne_V_O.gif" width="50" height="30"   id="F-Vanne-G" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-G')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 296px; top: 106px; width: 50px; height: 30px">
+	<img src="images/fuel/FV-Vanne_V_O.gif" width="50" height="30"   id="F-Vanne-D" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-D')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 185px; top: 132px; width: 50px; height: 30px">
+	<img src="images/fuel/FV-Vanne_H_O.gif" width="50" height="30"   id="F-Vanne-X" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-X')">
+	</SPAN> 
+	
+	
+	<!-- Pompes Carburant -->
+	<SPAN style="position: absolute; left: 140px; top: 200px; width: 30px; height: 30px">
+	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-AV" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-AV')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 250px; top: 200px; width: 30px; height: 30px">
+	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-AR" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-AR')">
+	</SPAN> 
+	<SPAN style="position: absolute; left: 338px; top: 200px; width: 30px; height: 30px">
+	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-C" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-C')">
+	</SPAN> 
+	
+	
+	<!-- RPM Moteur et Rotor -->
+	<SPAN style="position: absolute; left: 72px; top: 36px; width: 50px; height: 30px ; color:grey;  font-size:1.2em" id="F-RPM-G"> </SPAN>
+	<SPAN style="position: absolute; left: 187px; top: 36px; width: 50px; height: 30px ; color:grey; font-size:1.2em" id="F-RPM-RO"> </SPAN>
+	<SPAN style="position: absolute; left: 294px; top: 36px; width: 50px; height: 30px ; color:grey; font-size:1.2em" id="F-RPM-D"> </SPAN>
+	
+	<!-- Selecteur de Moteur -->
+	<SPAN style="position: absolute; left: 39px; top: 332px; width: 100px; height: 40px">
+	<img src="images/Switch-H-mid.gif" width="100" height="40" id="F-SW-1">
+	</SPAN>
+	
+	<!-- Selecteur de Type de démarrage -->
+	<SPAN style="position: absolute; left: 431px; top: 262px; width: 40px; height: 100px">
+	<img src="images/Switch-V-mid.gif" width="40" height="100" id="F-SW-2">
+	</SPAN>
+	
+	<!-- Voyant Demarrage -->
+	<SPAN style="position: absolute; left: 419px; top: 120px; width: 60px; height: 30px">
+	<img src="images/fuel/F_auto-ignition-On.gif" width="60" height="30"   id="Start-V-1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 419px; top: 180px; width: 60px; height: 30px">
+	<img src="images/fuel/F_starter-On.gif" width="60" height="30" id="Start-V-2">
+	</SPAN>
+
+
+</div>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div id="Panel_Rotor">
+
+	<img src="images/rotor/Rotor-Panel-2.gif" width="340" height="200"  > 
+	
+	<SPAN style="position: absolute; left: 125px; top: 150px; width: 75px; height: 40px ; font-size:1.5em" id="Test_val"> </SPAN>
+	
+
+	<!-- IAS, Vario , RMP , Pitch -->
+	<SPAN style="position: absolute; left: 125px; top: 29px; width: 75px; height: 40px ; font-size:1.5em" id="IAS_0"> </SPAN>
+	<SPAN style="position: absolute; left: 125px; top: 104px; width: 75px; height: 40px ; font-size:1.5em" id="Vario_0"> </SPAN>
+	<SPAN style="position: absolute; left: 225px; top: 29px; width: 75px; height: 40px ; font-size:1.5em" id="RPM_Rot"> </SPAN>
+	<SPAN style="position: absolute; left: 225px; top: 104px; width: 75px; height: 40px ; font-size:1.5em" id="Pitch_Rot"> </SPAN>
+	
+	
+	<!-- Voyant High Speed et Vortex -->
+	<SPAN style="position: absolute; left: 25px; top: 24px; width: 75px; height: 40px">
+	<img src="images/rotor/RV_Speed.gif" width="75" height="40"  id="RV-Speed">
+	</SPAN>
+	
+	<SPAN style="position: absolute; left: 25px; top: 99px; width: 75px; height: 40px">
+	<img src="images/rotor/RV_Vortex.gif" width="75" height="40" id="RV-Vortex">
+	</SPAN>
+	
+	
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_Oil">
+
+	<img src="images/panel/Temp-Panel_50_D.gif" width="400" height="200" > 
+
+	
+
+	<!-- Quantité Carburant Avant / Arrière , Totale , Consommation -->
+	<SPAN style="position: absolute; left: 75px; top: 46px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Deg-G"> </SPAN>
+	<SPAN style="position: absolute; left: 177px; top: 46px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Deg-GB"> </SPAN>
+	<SPAN style="position: absolute; left: 284px; top: 46px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Deg-D"> </SPAN>
+	<SPAN style="position: absolute; left: 75px; top: 94px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Pre-G"> </SPAN>
+	<SPAN style="position: absolute; left: 177px; top: 94px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Pre-GB"> </SPAN>
+	<SPAN style="position: absolute; left: 284px; top: 94px; width: 42px; height: 30px ; color:red; font-size:1.2em" id="O-Pre-D"> </SPAN>
+	<SPAN style="position: absolute; left: 76px; top: 154px; width: 42px; height: 30px ; color:grey; font-size:1.2em" id="O-Deg-EG"> </SPAN>
+	<SPAN style="position: absolute; left: 284px; top: 154px; width: 42px; height: 30px ; color:grey; font-size:1.2em" id="O-Deg-ED"> </SPAN>
+	
+
+</div>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_Doppler">
+	<img src="images/doppler/Doppler.gif" width="250" height="250" usemap="#Panel_Doppler"> 
+
+	<!-- Mapping des boutons On/Off-->
+	<map name="Panel_Doppler">
+		
+		<area shape="rect" coords="150,220,190,245" href="javascript:CmdDCSRaw('51500201')">
+		<area shape="rect" coords="200,220,240,245" href="javascript:CmdDCSRaw('51500301')">
+								
+	</map>
+
+
+	<!-- Voyant Enable -->
+	<SPAN style="position: absolute; left: 150px; top: 180px; width: 80px; height: 30px">
+	<img src="images/doppler/Doppler-Enable.gif" width="80" height="30" id="Doppler-Enable">
+	</SPAN>
+
+	<!-- Zone d'affichage de Drift Angle , Flight Path , Map Angle -->
+	<SPAN style="position: absolute; left: 25px; top: 34px; width: 70px; height: 40px ; color:green ; text-align:right ; font-size:150%" id="Dop_Drift"> </SPAN>
+	<SPAN style="position: absolute; left: 150px; top: 37px; width: 80px; height: 40px ; color:green ; font-size:120%" id="Dop_DFlag"> </SPAN>
+	
+	<SPAN style="position: absolute; left: 21px; top: 117px; width: 80px; height: 40px ;color:green ; font-size:120%" id="Dop_FFlag"> </SPAN>
+	<SPAN style="position: absolute; left: 155px; top: 114px; width: 70px; height: 40px ;color:green ; text-align:right ; font-size:150%" id="Dop_Flight"> </SPAN>
+	
+	<SPAN style="position: absolute; left: 28px; top: 195px; width: 80px; height: 40px ;color:green ; text-align:right ; font-size:150%" id="Dop_Map"> </SPAN>
+	
+	    
+</div>
+
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_ARK_9">
+
+	<img src="images/ark9/ARK_9_a.gif" width="500" height="400" usemap="#ARK-9"> 
+
+	<map name="ARK-9">
+
+		<!-- xxxx  TLF  TLG xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="5,40,55,70" href="javascript:CmdDCSRaw('14000201')">
+			<area shape="rect" coords="5,170,55,200" href="javascript:CmdDCSRaw('14000200')">			
+
+		<!-- xxxx  STBY  MAIN xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="130,340,190,385" href="javascript:CmdDCSRaw('14001100')">
+			<area shape="rect" coords="310,340,370,385" href="javascript:CmdDCSRaw('14001101')">
+
+		<!-- xxxx  OFF COMP ANT LOOP xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="225,60,265,90" href="javascript:CmdDCSRaw('44000300')">
+			<area shape="rect" coords="270,60,310,90" href="javascript:CmdDCSRaw('44000301')">
+			<area shape="rect" coords="325,60,355,90" href="javascript:CmdDCSRaw('44000302')">
+			<area shape="rect" coords="365,60,405,90" href="javascript:CmdDCSRaw('44000303')">
+
+		<!-- xxxx  Incrément Fréquence STBY xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="140,220,175,255" href="javascript:Increment_ARK_Freq(1,100,1)">
+			<area shape="rect" coords="180,220,220,255" href="javascript:Increment_ARK_Freq(1,10,1)">
+			<area shape="rect" coords="140,300,175,335" href="javascript:Increment_ARK_Freq(1,100,-1)">
+			<area shape="rect" coords="180,300,220,335" href="javascript:Increment_ARK_Freq(1,10,-1)">
+			
+		<!-- xxxx  Incrément Fréquence MAIN xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="370,220,405,255" href="javascript:Increment_ARK_Freq(0,100,1)">
+			<area shape="rect" coords="410,220,450,255" href="javascript:Increment_ARK_Freq(0,10,1)">
+			<area shape="rect" coords="370,300,405,335" href="javascript:Increment_ARK_Freq(0,100,-1)">
+			<area shape="rect" coords="410,300,450,335" href="javascript:Increment_ARK_Freq(0,10,-1)">	
+
+		<!-- xxxx  Fine Tune Fréquence STBY xxxxxxxxxxxxxxxxxx -->
+			<area shape="circle" coords="50,280,20" href="javascript:CmdDCSRaw('64000420')">
+			<area shape="circle" coords="60,250,20" href="javascript:CmdDCSRaw('64000421')">
+			<area shape="circle" coords="90,240,20" href="javascript:CmdDCSRaw('64000422')">
+			<area shape="circle" coords="120,250,20" href="javascript:CmdDCSRaw('64000423')">
+			<area shape="circle" coords="130,280,20" href="javascript:CmdDCSRaw('64000424')">
+			<area shape="circle" coords="120,310,20" href="javascript:CmdDCSRaw('64000425')">
+			<area shape="circle" coords="90,320,20" href="javascript:CmdDCSRaw('64000426')">
+
+		<!-- xxxx  Fine Tune Fréquence MAIN xxxxxxxxxxxxxxxxxx -->
+			<area shape="circle" coords="280,280,20" href="javascript:CmdDCSRaw('64000720')">
+			<area shape="circle" coords="290,250,20" href="javascript:CmdDCSRaw('64000721')">
+			<area shape="circle" coords="320,240,20" href="javascript:CmdDCSRaw('64000722')">
+			<area shape="circle" coords="350,250,20" href="javascript:CmdDCSRaw('64000723')">
+			<area shape="circle" coords="360,280,20" href="javascript:CmdDCSRaw('64000724')">
+			<area shape="circle" coords="350,310,20" href="javascript:CmdDCSRaw('64000725')">
+			<area shape="circle" coords="320,320,20" href="javascript:CmdDCSRaw('64000726')">	
+			
+	
+	</map>
+
+	<!-- Selecteur TLF TLG -->
+	<SPAN style="position: absolute; left: 10px; top: 72px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="ARK9-SW-TLF">
+	</SPAN>
+
+	<!-- Selecteur STBY Main -->
+	<SPAN style="position: absolute; left: 197px; top: 340px; width: 100px; height: 40px">
+	<img src="images/Switch-ga.gif" width="100" height="40" id="ARK9-SW-MAIN">
+	</SPAN>
+
+	<!-- Selecteur OFF COMP ANT LOOP -->
+	<SPAN style="position: absolute; left: 220px; top: 92px; width: 60px; height: 40px">
+	<img src="images/Switch-solo.gif" width="60" height="40" id="ARK9-SW-OFF">
+	</SPAN>
+
+	<!-- Tune STBY -->
+	<SPAN style="position: absolute; left: 62px; top: 252px; width: 55px; height: 55px">
+	<img src="images/selecteur55.gif" width="55" height="55" id="ARK9-Tune-STBY">
+	</SPAN>
+
+	<!-- Tune Main -->
+	<SPAN style="position: absolute; left: 293px; top: 252px; width: 55px; height: 55px">
+	<img src="images/selecteur55.gif" width="55" height="55" id="ARK9-Tune-MAIN">
+	</SPAN>
+
+	<!-- Tune GAIN -->
+	<SPAN style="position: absolute; left: 433px; top: 73px; width: 55px; height: 55px">
+	<img src="images/selecteur55.gif" width="55" height="55" id="ARK9-Gain">
+	</SPAN>
+
+	<!-- Aiguille Signal -->
+	<SPAN style="position: absolute; left: 65px; top: 55px; width: 150px; height: 150px">
+	<img src="images/Aig_drift.gif" width="150" height="150" id="ARK9-Signal">
+	</SPAN>
+
+
+	<!-- Affichage Fréquence -->
+	<SPAN style="position: absolute; left: 145px; top: 260px; width: 80px; height: 40px ;color:green;  font-size:1.8em" id="ARK9-Stby"> </SPAN>
+	<SPAN style="position: absolute; left: 374px; top: 260px; width: 80px; height: 40px ;color:green;  font-size:1.8em" id="ARK9-Main"> </SPAN>
+
+	<!-- Affichage Fréquence en cours de modification -->
+	<SPAN style="position: absolute; left: 145px; top: 260px; width: 80px; height: 40px ;background-color:black ;color:red;  font-size:1.8em" id="ARK9-temp-Stby" onclick = "Send_ARK_Freq()" > </SPAN>
+	<SPAN style="position: absolute; left: 374px; top: 260px; width: 80px; height: 40px ;background-color:black ;color:red;  font-size:1.8em" id="ARK9-temp-Main" onclick = "Send_ARK_Freq()"> </SPAN>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<div id="Panel_ARK_UD">
+
+	<img src="images/arkUD/ARK_UD_a.gif" width="500" height="400" usemap="#ARK-UD"> 
+	
+	<map name="ARK-UD">
+			<!-- xxxx  OFF NARROW WIDE PULSE xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="125,110,180,150" href="javascript:CmdDCSRaw('44100100')">
+			<area shape="rect" coords="185,110,275,150" href="javascript:CmdDCSRaw('44100101')">
+			<area shape="rect" coords="300,110,365,150" href="javascript:CmdDCSRaw('44100102')">
+			<area shape="rect" coords="375,110,450,150" href="javascript:CmdDCSRaw('44100103')">
+			
+			<!-- xxxx  Sensitivity xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="25,50,80,80" href="javascript:CmdDCSRaw('14100201')">
+			<area shape="rect" coords="25,180,80,205" href="javascript:CmdDCSRaw('14100200')">
+			
+			<!-- xxxx  VHF UHF xxxxxxxxxxxxxxxxxx -->
+			<area shape="rect" coords="25,210,80,245" href="javascript:CmdDCSRaw('14100301')">
+			<area shape="rect" coords="25,350,80,385" href="javascript:CmdDCSRaw('14100300')">
+			
+			<!-- xxxx  Channel Selection xxxxxxxxxxxxxxxxxx -->
+			<area shape="circle" coords="290,355,20" href="javascript:CmdDCSRaw('44100400')">
+			<area shape="circle" coords="305,320,20" href="javascript:CmdDCSRaw('44100401')">
+			<area shape="circle" coords="345,290,20" href="javascript:CmdDCSRaw('44100402')">
+			<area shape="circle" coords="425,290,20" href="javascript:CmdDCSRaw('44100403')">
+			<area shape="circle" coords="465,320,20" href="javascript:CmdDCSRaw('44100404')">
+			<area shape="circle" coords="480,355,20" href="javascript:CmdDCSRaw('44100405')">	
+				
+	</map>
+	
+	<!-- Selecteur OFF NARROW WIDE PULSE -->
+	<SPAN style="position: absolute; left: 140px; top: 153px; width: 60px; height: 40px">
+	<img src="images/Switch-solo.gif" width="60" height="40" id="ARKUD-SW-OFF">
+	</SPAN>
+	
+	<!-- Tune VOLUME -->
+	<SPAN style="position: absolute; left: 174px; top: 305px; width: 55px; height: 55px">
+	<img src="images/selecteur55.gif" width="55" height="55" id="ARKUD-Vol">
+	</SPAN>
+	
+	<!-- Selecteur Sensitivity -->
+	<SPAN style="position: absolute; left: 37px; top: 80px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="ARKUD-SW-Sens">
+	</SPAN>
+	<!-- Selecteur VHF UHF -->
+	<SPAN style="position: absolute; left: 37px; top: 242px; width: 40px; height: 100px">
+	<img src="images/Switch-bas.gif" width="40" height="100" id="ARKUD-SW-VHF">
+	</SPAN>
+	
+	<!-- Selecteur Channel -->
+	<SPAN style="position: absolute; left: 355px; top: 285px; width: 60px; height: 180px">
+	<img src="images/arkUD/Selecteur_short.gif" width="60" height="180" id="ARKUD-Chan">
+	</SPAN>
+	
+	<!-- Voyant Narrow -->
+	<SPAN style="position: absolute; left: 200px; top: 52px; width: 50px; height: 50px">
+	<img src="images/arkUD/Light-Rond.gif" width="50" height="50" id="ARKUD-V1">
+	</SPAN>
+	<SPAN style="position: absolute; left: 300px; top: 52px; width: 50px; height: 50px">
+	<img src="images/arkUD/Light-Rond.gif" width="50" height="50" id="ARKUD-V2">
+	</SPAN>
+	<SPAN style="position: absolute; left: 400px; top: 52px; width: 50px; height: 50px">
+	<img src="images/arkUD/Light-Rond.gif" width="50" height="50" id="ARKUD-V3">
+	</SPAN>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div id="Panel_Fuel">
+	<img src="images/fuel/Fuel-gauge.gif" width="500" height="250" usemap="#FuelSelect"> 
+
+	<!-- Mapping du selecteur de réservoir-->
+	<map name="FuelSelect">
+			<area shape="circle" coords="40,150,20" href="javascript:CmdDCSRaw('40200800')">
+			<area shape="circle" coords="40,100,20" href="javascript:CmdDCSRaw('40200801')">
+			<area shape="circle" coords="80,50,20" href="javascript:CmdDCSRaw('40200802')">
+			<area shape="circle" coords="180,50,20" href="javascript:CmdDCSRaw('40200803')">
+			<area shape="circle" coords="200,100,20" href="javascript:CmdDCSRaw('40200804')">
+			<area shape="circle" coords="200,150,20" href="javascript:CmdDCSRaw('40200805')">
+	</map> 
+	
+	<!-- Aiguille -->
+	<SPAN style="position: absolute; left: 250px; top: 20px; width: 250px; height: 250px">
+	<img src="images/Aig_drift.gif" width="250" height="250" id="FUEL_Aig">
+	</SPAN>
+	
+	<!-- Select Tank -->
+	<SPAN style="position: absolute; left: 95px; top: 35px; width: 60px; height: 180px">
+	<img src="images/selecteur180.gif" width="60" height="180" id="FUEL-Select">
+	</SPAN>
+	
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div id="Panel_Radio">
+
+	<img src="images/radio/Radio_Panel_3000.gif" width="320" height="200"   usemap="#Panel_Radio">
+
+	<map name="Panel_Radio">
+
+			<!-- Mapping des boutons de memorisation, M1, M2, M3, M4 -->
+			<area shape="rect" coords="75,65,125,85" href="javascript:radio_freq_mem(1)">
+			<area shape="rect" coords="135,65,185,85" href="javascript:radio_freq_mem(2)">
+			<area shape="rect" coords="195,65,245,85" href="javascript:radio_freq_mem(3)">
+			<area shape="rect" coords="255,65,305,85" href="javascript:radio_freq_mem(4)">
+	</map>  
+
+	<!-- Voyants Selection de Chan -->
+	<!-- La subroutine est mappé sur le voyant éteint, le fond est allumé -->
+	<!-- Quand le Chan est selectionné, le voyant éteint est fadeout, la zone ne peut plus être selectionnée  -->
+
+	<SPAN style="position: absolute; left: 15px; top: 15px; width: 50px; height: 40px">
+	<img src="images/radio/R_Man.gif" width="50" height="40"   id="VR_sel0" usemap="#radio0">
+	<map name="radio0">	<area shape="rect" coords="0,0,50,40" href="javascript:radio_canal(0)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 75px; top: 15px; width: 50px; height: 20px">
+	<img src="images/radio/R_Off.gif" width="50" height="20"   id="VR_sel1" usemap="#radio1">
+	<map name="radio1">	<area shape="rect" coords="0,0,50,20" href="javascript:radio_canal(1)"> </map>
+	</SPAN>
+
+	<SPAN style="position: absolute; left: 135px; top: 15px; width: 50px; height: 20px">
+	<img src="images/radio/R_Off.gif" width="50" height="20"   id="VR_sel2" usemap="#radio2">
+	<map name="radio2">	<area shape="rect" coords="0,0,50,20" href="javascript:radio_canal(2)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 195px; top: 15px; width: 50px; height: 20px">
+	<img src="images/radio/R_Off.gif" width="50" height="20"   id="VR_sel3" usemap="#radio3">
+	<map name="radio3">	<area shape="rect" coords="0,0,50,20" href="javascript:radio_canal(3)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 255px; top: 15px; width: 50px; height: 20px">
+	<img src="images/radio/R_Off.gif" width="50" height="20"   id="VR_sel4" usemap="#radio4">
+	<map name="radio4">	<area shape="rect" coords="0,0,50,20" href="javascript:radio_canal(4)"> </map>
+	</SPAN> 
+
+	<!-- Voyants de fréquence, subFreq -->
+	<SPAN style="position: absolute; left: 15px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_310.gif" width="40" height="30"   id="VR_310" usemap="#frq310">
+	<map name="frq310">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(310)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 65px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_320.gif" width="40" height="30"   id="VR_320" usemap="#frq320">
+	<map name="frq320">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(320)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 115px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_330.gif" width="40" height="30"   id="VR_330" usemap="#frq330">
+	<map name="frq330">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(330)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 165px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_340.gif" width="40" height="30"   id="VR_340" usemap="#frq340">
+	<map name="frq340">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(340)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 215px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_350.gif" width="40" height="30"   id="VR_350" usemap="#frq350">
+	<map name="frq350">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(350)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 265px; top: 110px; width: 40px; height: 30px">
+	<img src="images/radio/R_360.gif" width="40" height="30"   id="VR_360" usemap="#frq360">
+	<map name="frq360">	<area shape="rect" coords="0,0,40,30" href="javascript:radio_freq_unit(360)"> </map>
+	</SPAN> 
+
+	<!-- Voyants de subFreq -->
+
+	<SPAN style="position: absolute; left: 20px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d0.gif" width="30" height="30"   id="VR_00" usemap="#frq00">
+	<map name="frq00">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(0)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 70px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d1.gif" width="30" height="30"   id="VR_01" usemap="#frq01">
+	<map name="frq01">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(1)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 120px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d2.gif" width="30" height="30"   id="VR_02" usemap="#frq02">
+	<map name="frq02">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(2)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 170px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d3.gif" width="30" height="30"   id="VR_03" usemap="#frq03">
+	<map name="frq03">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(3)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 220px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d4.gif" width="30" height="30"   id="VR_04" usemap="#frq04">
+	<map name="frq04">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(4)"> </map>
+	</SPAN> 
+
+	<SPAN style="position: absolute; left: 270px; top: 155px; width: 30px; height: 30px">
+	<img src="images/radio/R_d5.gif" width="30" height="30"   id="VR_05" usemap="#frq05">
+	<map name="frq05">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(5)"> </map>
+	</SPAN> 
+
+	<!-- Affichage des fréquences Man, Chan1, Chan2, Chan3, Chan4 -->	
+	<SPAN style="position: absolute; left: 15px; top: 70px; width: 50px; height: 20px ; background-color:#990000; text-align:center; color:white" id="R_Chan0">	</SPAN>
+	<SPAN style="position: absolute; left: 75px; top: 35px; width: 50px; height: 20px ; background-color:#012040; text-align:center; color:white" id="R_Chan1">	</SPAN> 
+	<SPAN style="position: absolute; left: 135px; top: 35px; width: 50px; height: 20px ; background-color:#012040; text-align:center; color:white" id="R_Chan2">	</SPAN>
+	<SPAN style="position: absolute; left: 195px; top: 35px; width: 50px; height: 20px ; background-color:#012040; text-align:center; color:white" id="R_Chan3">	</SPAN>
+	<SPAN style="position: absolute; left: 255px; top: 35px; width: 50px; height: 20px ; background-color:#012040; text-align:center; color:white" id="R_Chan4">	</SPAN>
+	<!-- Affichage de la fréquence en cours de selection Non utilisé sur le Mig29 Radio Type 1-->	
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Hecto">	</SPAN>
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Deca">	</SPAN>
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Unit">	</SPAN>
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Deci">	</SPAN>
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Centi1">	</SPAN>
+	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Centi2">	</SPAN>
+
+</div>
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+  
+</body>
+</html>
