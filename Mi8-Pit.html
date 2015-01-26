@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<!-- KaTZ-Pit V5000 Q4-2014, 3rd Wing KaTZe : Remi Perrin -->
+<!-- KaTZ-Pit V5000 Q1-2015, 3rd Wing KaTZe : Remi Perrin -->
 <!-- Mi-8 Panel V009 2015/01 -->
 
 
@@ -99,6 +99,7 @@
 
 </div>
 
+
 <div id="Gauge_Power">
 	<img src="images/analog/Power-Gauge.gif" width="170" height="170"  >
 
@@ -127,6 +128,7 @@
 	</SPAN>		
 
 </div>
+
 
 <div id="Cadran_RPM2">
 	<img src="images/analog/rpm.gif" width="250" height="250"  > 
@@ -170,8 +172,6 @@
 </div>
  
 
-
-
 <div id="Cadran_Bille">
 	<img src="images/analog/Deviation.gif" width="250" height="250"  > 
 	
@@ -189,7 +189,13 @@
 
 
 <div id="Cadran_HSI">
-	<img src="images/analog/HSI-outer.gif" width="300" height="380"  > 
+	<img src="images/analog/HSI-outer.gif" width="300" height="380"  usemap="#C_HSI"> 
+
+	<!-- Mapping du bouton de selection de fréquence HSI : MW/VHF , ARK-9/ARK-UD-->
+	<map name="C_HSI">
+		<area shape="rect" coords="40,320,120,380" href="javascript:CmdDCSRaw('13400300')">
+		<area shape="rect" coords="180,320,260,380" href="javascript:CmdDCSRaw('13400301')">
+	</map> 
 	
 	<!-- Aiguille -->
 	<!-- HSI + switch Vario -->
@@ -207,7 +213,7 @@
 	
 	<!-- Selecteur MW/VHF -->
 	<SPAN style="position: absolute; left: 110px; top: 310px; width: 80px; height: 80px">
-	<img src="images/Switch-Metal-R2.gif" width="80" height="80" id="On_Altirad">
+	<img src="images/Switch-Metal-R2.gif" width="80" height="80" id="HSI_mwvhf">
 	</SPAN>
     
 </div>
@@ -217,7 +223,6 @@
 
 	<img src="images/analog/ADI.gif" width="400" height="400"  > 
 	
-
 	<!-- Pitch Top -->
 	<SPAN style="position: absolute; left: 60px; top: 64px; width: 280px; height: 140px">
 	<img src="images/analog/ADI-Top.gif" width="280" height="140" id="ADI_Pitch_T">
@@ -228,7 +233,6 @@
 	<img src="images/analog/ADI-Center.gif" width="280" height="4" id="ADI_Pitch_C">
 	</SPAN>
 	
-
 	<!-- Bank -->
 	<SPAN style="position: absolute; left: 0px; top: 0px; width: 400px; height: 400px">
 	<img src="images/analog/ADI-Bank.gif" width="400" height="400" id="ADI_Bank">
@@ -248,9 +252,7 @@
 	<SPAN style="position: absolute; left: 160px; top: 100px; width: 80px; height: 40px ; background-color:#4682B4 ;border-style: solid;
     border-color: grey;color:white ; font-size:200%" id="ADI_Pitch_V1"> </SPAN>
 	<SPAN style="position: absolute; left: 160px; top: 270px; width: 80px; height: 40px ; background-color:lightgrey ;color:black ; font-size:200%" id="ADI_Pitch_V2"> </SPAN>
-
-	
-    
+   
 </div>
 
 
@@ -286,10 +288,9 @@
 	<SPAN style="position: absolute; left: 209px; top: 255px; width: 12px; height: 84px">
 	<img src="images/analog/Stationnaire-DV2.gif" width="11" height="84" id="Sling_AR">
 	</SPAN>
-
-	
-    
+   
 </div>
+
 
 <div id="Cadran_Vario">
 	<img src="images/analog/Vario.gif" width="300" height="300"  > 
@@ -301,9 +302,9 @@
     
 </div>
 
+
 <div id="Cadran_Drift">
 	<img src="images/analog/Drift.gif" width="300" height="300"  > 
-
 	
 	<!-- Vitesse Drift -->
 	<SPAN style="position: absolute; left: 120px; top: 208px; width: 60px; height: 30px ; background-color:black ;color:lightgrey;  font-size:1.8em" id="Speed_Drift"> </SPAN>
@@ -315,14 +316,8 @@
 	<SPAN style="position: absolute; left: 20px; top: 20px; width: 260px; height: 260px">
 	<img src="images/Aig_drift.gif" width="260" height="260" id="AIG_Drift">
 	</SPAN>
-
     
 </div>
-
-
-
-
-
 
 
 
@@ -335,7 +330,7 @@
 	<!-- Mapping du bouton, Demarrage KaTZ-Pit , et ouverture porte -->
 	<map name="Connection_P">
 		<area shape="circle" coords="55,75,45" href="javascript:Pit_Start(9)">
-		<area shape="rect" coords="210,10,240,140" href="javascript:CmdDCSRaw('11200501')">
+		<area shape="rect" coords="10,150,200,190" href="javascript:Door()">
 	</map>
 
 	<!-- Voyants de connection KaTZ-Link -->
@@ -400,9 +395,6 @@
 		
 	</map>
 
-
-
-
 </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -450,7 +442,6 @@
 	<SPAN style="position: absolute; left: 190px; top: 70px; width: 40px; height: 100px">
 	<img src="images/Switch-bas.gif" width="40" height="100" id="APUGEN-SW">
 	</SPAN>
-
 	
 	<!-- Selecteur Rectifiers 1, 2, 3, On/Off -->
 	<SPAN style="position: absolute; left: 30px; top: 270px; width: 40px; height: 100px">
@@ -493,9 +484,6 @@
 	<SPAN style="position: absolute; left: 340px; top: 200px; width: 60px; height: 30px">
 	<img src="images/electric/E_Test-On.gif" width="60" height="30" id="E-V-Test">
 	</SPAN>
-
-
-	
 
 </div>
 
@@ -642,9 +630,6 @@
 		<!-- Switch de Type de demarrage -->
 		<area shape="rect" coords="420,230,480,260" href="javascript:CmdDCSRaw('30302702')">
 		<area shape="rect" coords="420,360,480,390" href="javascript:CmdDCSRaw('30302700')">
-						
-		
-		
 		
 	</map>
 
@@ -737,10 +722,6 @@
 	
 	
 </div>
-
-
-
-
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
@@ -995,16 +976,9 @@
 
 </div>
 
-
-
-
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
-
-
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
-
 
 <div id="Panel_Radio">
 
@@ -1111,8 +1085,6 @@
 	<map name="frq05">	<area shape="rect" coords="0,0,30,30" href="javascript:radio_freq_deci(5)"> </map>
 	</SPAN> 
 
-
-
 	<!-- Affichage des fréquences Man, Chan1, Chan2, Chan3, Chan4 -->	
 	<SPAN style="position: absolute; left: 15px; top: 70px; width: 50px; height: 20px ; background-color:#990000; text-align:center; color:white" id="R_Chan0">	</SPAN>
 	<SPAN style="position: absolute; left: 75px; top: 35px; width: 50px; height: 20px ; background-color:#012040; text-align:center; color:white" id="R_Chan1">	</SPAN> 
@@ -1127,18 +1099,9 @@
 	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Centi1">	</SPAN>
 	<SPAN style="position: absolute; left: 1000px; top: 1000px; width: 0px; height: 0px ; text-align:center; font-size:10%" id="R_Centi2">	</SPAN>
 
-	
-
 </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-
-
-
-
-
-
-
   
 </body>
 </html>

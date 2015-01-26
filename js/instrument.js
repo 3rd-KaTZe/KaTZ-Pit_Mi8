@@ -66,7 +66,8 @@ function instrument_Airspeed(val){
 
 function instrument_Altirad(val,index){
 	var a_origine = 0
-	var l_gain = 0.35
+	var l_gain = 0.328
+	// Erreur dans DCS, où la même position d'aiguille et Index ne donne pas le même output (31 et 34)
 	
 	$("#AIG_Altirad").css({
 		'-moz-transform':'rotate('+(a_origine+l_gain*val)+'deg)',

@@ -14,16 +14,16 @@ function panel_instrument_flight(KaTZPit_data){
 		
 		// Altirad ------------------------------------------------------------------------------------
 		// xxAB , où A = Flag Low Alti , B = Flag On
-		Altirad_flag = dataread_split_2(KaTZPit_data["AltiRad_FI"])
+		Altirad_flag = dataread_split_2(KaTZPit_data["AltiRad_DX"])
 		
-		// Positionnement de l'Index low altitude
-		instrument_Altirad(KaTZPit_data["QFE"],Altirad_flag[0])
+		// Affichage Altirad et Positionnement de l'Index low altitude
+		instrument_Altirad(KaTZPit_data["QFE"],dataread_split_2(KaTZPit_data["AltiRad_DX"])[0])
 		
 		// Alarme Low Alti 
-		if (Altirad_flag[1] > 10) {$("#LOW_Altirad").fadeIn()} else {$("#LOW_Altirad").fadeOut()}
+		if (dataread_posit(KaTZPit_data["AltiRad_FI"],2) == 1) {$("#LOW_Altirad").fadeIn()} else {$("#LOW_Altirad").fadeOut()}
 		
 		// Bouton On/Off
-		if (Altirad_flag[1] > 0) {$("#On_Altirad").attr('src','images/Switch-Metal-U3.gif')} 
+		if (dataread_posit(KaTZPit_data["AltiRad_FI"],1) == 1) {$("#On_Altirad").attr('src','images/Switch-Metal-U3.gif')} 
 		else {$("#On_Altirad").attr('src','images/Switch-Metal-D3.gif')}
 				
 		
@@ -42,6 +42,10 @@ function panel_instrument_flight(KaTZPit_data){
 		var i_Route = (KaTZPit_data["Route"]/10)
 	
 		instrument_HSI(i_Cap, i_Way, i_Route)	
+		
+		// Bouton On/Off
+		if (dataread_posit(KaTZPit_data["Nav_Fl"],1) == 1) {$("#HSI_mwvhf").attr('src','images/Switch-Metal-R2.gif')} 
+		else {$("#HSI_mwvhf").attr('src','images/Switch-Metal-L2.gif')}
 			
 		// ADI  -------------------------------------------------------------------------------------
 		var ADI_Pitch = KaTZPit_data["Pitch"]
