@@ -16,7 +16,7 @@ function paneldata_init(){
 		Pitch:0, Bank:00, Yaw:0, ADI_FI:50005000, 
 		Way:90, Route:360, Cap:0, WP_dist:0, WP_num:88, Bullseye:0, EUP:50005000,
 		Eng_rpm:50005000, Eng_temp:50005000, Power_L:0, Power_R:0, Power_X:0, COff:0,
-		RPM_Rot:0, Pitch_Rot:1, Eng_Oil_deg:50005000, GB_Oil_deg:50005000, Eng_Oil_pre:50005000, GB_Oilpre:50005000,
+		RPM_Rot:0, Pitch_Rot:1, Eng_Oil_deg:50005000, GB_Oil_deg:50005000, Eng_Oil_pre:50005000, GB_Oil_pre:50005000,
 		APU_Data:50005000, APU_Voyants:5555, APU_Typ:0,
 		Start_V:55, Start_Sel:0, Start_Typ:0,
 		Fuel_AV:0, Fuel_AR:0, Conso:0, Fuel_V:555, Fuel_P:555, Fuel_PE:5555,
@@ -54,9 +54,10 @@ function panel_On_init(){
 
 	console.log("Initialisation des panels affichés")
 
-var Panel_On = { Init:0, Breakers:0, Electric_DC:0, Electric_AC:0, APU:0,  Start:0, Rotor:0, Oil:0, Fuel:0,
+var Panel_On = { Init:0, Breakers:1, Electric_DC:1, Electric_AC:1, 
+	APU:1,  Start:1, Rotor:0, Oil:1, Fuel:0,
 	Analog_1:1, Analog_2:0, 
-	ARK_9:0, ARK_UD:0, Doppler:1, 
+	ARK_9:0, ARK_UD:0, Doppler:0, 
 	Radio_360:0, Vierge:0, Navigation:0, Target:0 }
 
 return (Panel_On);

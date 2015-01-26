@@ -90,57 +90,57 @@
 
 
 <div id="Cadran_Pitch">
-	<img src="images/analog/Pitch.gif" width="200" height="200"  >
+	<img src="images/analog/Pitch.gif" width="250" height="250"  >
 	
 	<!-- Aiguille -->
-	<SPAN style="position: absolute; left: 0px; top: 0px; width: 200px; height: 200px">
-	<img src="images/M_Aiguille.gif" width="200" height="200" id="AIG_Pitch">
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
+	<img src="images/M_Aiguille.gif" width="250" height="250" id="AIG_Pitch">
 	</SPAN>		
 
 </div>
 
 
 <div id="Gauge_Power">
-	<img src="images/analog/Power-Gauge.gif" width="170" height="170"  >
+	<img src="images/analog/Power-Gauge.gif" width="250" height="250"  >
 
 	<!-- Gauge de Puissance Moteur -->
-	<SPAN style="position: absolute; left: 52px; top: 25px; width: 22px; height: 125px">
-	<img src="images/rotor/Rot_Gauge.gif" width="15" height="125"   id="R_Power_L">
+	<SPAN style="position: absolute; left: 76px; top: 40px; width: 25px; height: 180px">
+	<img src="images/rotor/Rot_Gauge.gif" width="25" height="180"   id="R_Power_L">
 	</SPAN>
 
-	<SPAN style="position: absolute; left: 127px; top: 25px; width: 22px; height: 125px">
-	<img src="images/rotor/Rot_Gauge.gif" width="15" height="125"   id="R_Power_R">
+	<SPAN style="position: absolute; left: 187px; top: 40px; width: 25px; height: 125px">
+	<img src="images/rotor/Rot_Gauge.gif" width="25" height="180"   id="R_Power_R">
 	</SPAN>
 	
-	<SPAN style="position: absolute; left: 65px; top: 125px; width: 70px; height: 59px">
-	<img src="images/rotor/Rot_Index_8.gif" width="70" height="59"   id="R_Power_X">
+	<SPAN style="position: absolute; left: 80px; top: 190px; width: 70px; height: 80px">
+	<img src="images/rotor/Rot_Index_8.gif" width="120" height="80"   id="R_Power_X">
 	</SPAN>
 
 </div>
 
 
 <div id="Cadran_RPM">
-	<img src="images/analog/rpm.gif" width="250" height="250"  > 
+	<img src="images/analog/rpm.gif" width="300" height="300"  > 
 
 	<!-- Aiguille -->
-	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
-	<img src="images/M_Aiguille.gif" width="250" height="250" id="AIG_RPM_Rot">
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
+	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_RPM_Rot">
 	</SPAN>		
 
 </div>
 
 
 <div id="Cadran_RPM2">
-	<img src="images/analog/rpm.gif" width="250" height="250"  > 
+	<img src="images/analog/rpm.gif" width="300" height="300"  > 
 	
 	<!-- Aiguille -->
-	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
-	<img src="images/engine/M_Aiguille_L.gif" width="250" height="250" id="AIG_RPM_Eng_L">
+	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
+	<img src="images/engine/M_Aiguille_L.gif" width="300" height="300" id="AIG_RPM_Eng_L">
 	</SPAN>	
 	
 	<!-- Aiguille -->
 	<SPAN style="position: absolute; left: 0px; top: 0px; width: 250px; height: 250px">
-	<img src="images/engine/M_Aiguille_R.gif" width="250" height="250" id="AIG_RPM_Eng_R">
+	<img src="images/engine/M_Aiguille_R.gif" width="300" height="300" id="AIG_RPM_Eng_R">
 	</SPAN>	
 
 </div>
@@ -167,6 +167,21 @@
 	<!-- Aiguille -->
 	<SPAN style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px">
 	<img src="images/M_Aiguille.gif" width="300" height="300" id="AIG_Airspeed">
+	</SPAN>
+	
+</div>
+
+<div id="Cadran_EngExTemp">
+	<img src="images/engine/Eng_ExTemp.gif" width="300" height="300"  >  
+	
+	<!-- Aiguille L-->
+	<SPAN style="position: absolute; left: 23px; top: 80px; width: 100px; height: 100px">
+	<img src="images/F_Aiguille.gif" width="130" height="130" id="Eng_ExTemp_L">
+	</SPAN>
+	
+	<!-- Aiguille R-->
+	<SPAN style="position: absolute; left: 149px; top: 80px; width: 100px; height: 100px">
+	<img src="images/F_Aiguille.gif" width="130" height="130" id="Eng_ExTemp_R">
 	</SPAN>
 	
 </div>
@@ -564,43 +579,50 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <div id="Panel_APU">
 
-	<img src="images/apu/APU_Mi-8_D.gif" width="500" height="250"   usemap="#Panel_APU">
+	<img src="images/apu/APU_Mi-8_analog.gif" width="500" height="400"   usemap="#Panel_APU">
 	
 	<!-- Mapping de selection de démarrage et d'arrêt-->
 	<map name="Panel_APU">
 		<!-- Selection Start-->
-		<area shape="rect" coords="20,60,80,100" href="javascript:CmdDCSRaw('30301202')">
+		<area shape="rect" coords="20,210,80,250" href="javascript:CmdDCSRaw('30301202')">
 		<!-- Selection Crank-->
-		<area shape="rect" coords="5,100,25,200" href="javascript:CmdDCSRaw('30301201')">
+		<area shape="rect" coords="5,250,25,350" href="javascript:CmdDCSRaw('30301201')">
 		<!-- Selection False-->
-		<area shape="rect" coords="20,200,80,240" href="javascript:CmdDCSRaw('30301200')">
+		<area shape="rect" coords="20,350,80,390" href="javascript:CmdDCSRaw('30301200')">
 		<!-- Start APU-->
-		<area shape="rect" coords="100,100,200,200" href="javascript:CmdDCSRaw('50302601')">
+		<area shape="rect" coords="100,250,200,350" href="javascript:CmdDCSRaw('50302601')">
 		<!-- Stop APU-->
-		<area shape="rect" coords="300,100,400,200" href="javascript:CmdDCSRaw('50300701')">
+		<area shape="rect" coords="300,250,400,350" href="javascript:CmdDCSRaw('50300701')">
 				
 	</map>
 	
-	<!-- Températures APU -->
-	<SPAN style="position: absolute; left: 100px; top: 20px; width: 80px; height: 40px ;color:grey;  font-size:1.8em" id="APU-DEG"> </SPAN>
-	<SPAN style="position: absolute; left: 320px; top: 20px; width: 80px; height: 40px ;color:grey;  font-size:1.8em" id="APU-AIR"> </SPAN>
+	<!-- Aiguille Température-->
+	<SPAN style="position: absolute; left: 20px; top: 18px; width: 200px; height: 200px">
+	<img src="images/Aig_drift_2.gif" width="200" height="200" id="APU-DEG_A">
+	</SPAN>
 	
+	<!-- Aiguille Pression -->
+	<SPAN style="position: absolute; left: 292px; top: 55px; width: 150px; height: 150px">
+	<img src="images/Aig_drift_2.gif" width="170" height="170" id="APU-AIR_A">
+	</SPAN>
+	
+		
 	<!-- Voyant APU -->
-	<SPAN style="position: absolute; left: 220px; top: 130px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 220px; top: 280px; width: 60px; height: 30px">
 	<img src="images/apu/A_auto-ignition-On.gif" width="60" height="30"   id="APU-V-Ignition">
 	</SPAN>
-	<SPAN style="position: absolute; left: 160px; top: 210px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 160px; top: 360px; width: 60px; height: 30px">
 	<img src="images/apu/A_oil-press-On.gif" width="60" height="30"   id="APU-V-Oil">
 	</SPAN>
-	<SPAN style="position: absolute; left: 220px; top: 210px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 220px; top: 360px; width: 60px; height: 30px">
 	<img src="images/apu/A_rpm-normal-On.gif" width="60" height="30"   id="APU-V-RPM-OK">
 	</SPAN>
-	<SPAN style="position: absolute; left: 280px; top: 210px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 280px; top: 360px; width: 60px; height: 30px">
 	<img src="images/apu/A_rpm-high-On.gif" width="60" height="30"   id="APU-V-RPM-Hi">
 	</SPAN>
 	
 	<!-- Selecteur Type de démarrage -->
-	<SPAN style="position: absolute; left: 30px; top: 103px; width: 40px; height: 100px">
+	<SPAN style="position: absolute; left: 30px; top: 253px; width: 40px; height: 100px">
 	<img src="images/Switch-V-mid.gif" width="40" height="100"   id="APU-SW-1">
 	</SPAN>
 
@@ -634,45 +656,41 @@
 	</map>
 
 	<!-- Cut Off / Rotor Break -->
-	<SPAN style="position: absolute; left: 70px; top: 70px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 80px; top: 227px; width: 60px; height: 30px">
 	<img src="images/fuel/FV_Cutoff_On.gif" width="60" height="30"   id="FV-CutOff-G" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-CutOff-G')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 290px; top: 70px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 308px; top: 227px; width: 60px; height: 30px">
 	<img src="images/fuel/FV_Cutoff_On.gif" width="60" height="30"   id="FV-CutOff-D" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-CutOff-D')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 180px; top: 70px; width: 60px; height: 30px">
+	<SPAN style="position: absolute; left: 190px; top: 227px; width: 60px; height: 30px">
 	<img src="images/fuel/FV_RotorBtk_On.gif" width="60" height="30"   id="FV-RotBrk" data-internal-id="0" onclick="javascript:CmdSiocDCS('FV-RotBrk')">
 	</SPAN> 
 
 	<!-- Position Vannes -->
-	<SPAN style="position: absolute; left: 75px; top: 106px; width: 50px; height: 30px">
+	<SPAN style="position: absolute; left: 86px; top: 161px; width: 50px; height: 30px">
 	<img src="images/fuel/FV-Vanne_V_O.gif" width="50" height="30"   id="F-Vanne-G" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-G')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 296px; top: 106px; width: 50px; height: 30px">
+	<SPAN style="position: absolute; left: 310px; top: 161px; width: 50px; height: 30px">
 	<img src="images/fuel/FV-Vanne_V_O.gif" width="50" height="30"   id="F-Vanne-D" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-D')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 185px; top: 132px; width: 50px; height: 30px">
+	<SPAN style="position: absolute; left: 202px; top: 15px; width: 50px; height: 30px">
 	<img src="images/fuel/FV-Vanne_H_O.gif" width="50" height="30"   id="F-Vanne-X" data-internal-id="0" onclick="javascript:CmdSiocDCS2('F-Vanne-X')">
 	</SPAN> 
 	
 	
 	<!-- Pompes Carburant -->
-	<SPAN style="position: absolute; left: 140px; top: 200px; width: 30px; height: 30px">
+	<SPAN style="position: absolute; left: 61px; top: 59px; width: 30px; height: 30px">
 	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-AV" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-AV')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 250px; top: 200px; width: 30px; height: 30px">
+	<SPAN style="position: absolute; left: 361px; top: 59px; width: 30px; height: 30px">
 	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-AR" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-AR')">
 	</SPAN> 
-	<SPAN style="position: absolute; left: 338px; top: 200px; width: 30px; height: 30px">
+	<SPAN style="position: absolute; left: 210px; top: 67px; width: 30px; height: 30px">
 	<img src="images/fuel/FV_Pump_A.gif" width="30" height="30"   id="F-Pump-C" data-internal-id="0" onclick="javascript:CmdSiocDCS('F-Pump-C')">
 	</SPAN> 
 	
 	
-	<!-- RPM Moteur et Rotor -->
-	<SPAN style="position: absolute; left: 72px; top: 36px; width: 50px; height: 30px ; color:grey;  font-size:1.2em" id="F-RPM-G"> </SPAN>
-	<SPAN style="position: absolute; left: 187px; top: 36px; width: 50px; height: 30px ; color:grey; font-size:1.2em" id="F-RPM-RO"> </SPAN>
-	<SPAN style="position: absolute; left: 294px; top: 36px; width: 50px; height: 30px ; color:grey; font-size:1.2em" id="F-RPM-D"> </SPAN>
-	
+		
 	<!-- Selecteur de Moteur -->
 	<SPAN style="position: absolute; left: 39px; top: 332px; width: 100px; height: 40px">
 	<img src="images/Switch-H-mid.gif" width="100" height="40" id="F-SW-1">
@@ -835,13 +853,13 @@
 	</map>
 
 	<!-- Selecteur TLF TLG -->
-	<SPAN style="position: absolute; left: 10px; top: 72px; width: 40px; height: 100px">
-	<img src="images/Switch-bas.gif" width="40" height="100" id="ARK9-SW-TLF">
+	<SPAN style="position: absolute; left: -9px; top: 82px; width: 40px; height: 100px">
+	<img src="images/Switch-Metal-D3.gif" width="80" height="80" id="ARK9-SW-TLF">
 	</SPAN>
 
 	<!-- Selecteur STBY Main -->
-	<SPAN style="position: absolute; left: 197px; top: 340px; width: 100px; height: 40px">
-	<img src="images/Switch-ga.gif" width="100" height="40" id="ARK9-SW-MAIN">
+	<SPAN style="position: absolute; left: 192px; top: 320px; width: 100px; height: 40px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="ARK9-SW-MAIN">
 	</SPAN>
 
 	<!-- Selecteur OFF COMP ANT LOOP -->
@@ -921,17 +939,17 @@
 	</SPAN>
 	
 	<!-- Selecteur Sensitivity -->
-	<SPAN style="position: absolute; left: 37px; top: 80px; width: 40px; height: 100px">
-	<img src="images/Switch-bas.gif" width="40" height="100" id="ARKUD-SW-Sens">
+	<SPAN style="position: absolute; left: 17px; top: 90px; width: 40px; height: 100px">
+	<img src="images/Switch-Metal-D3.gif" width="80" height="80" id="ARKUD-SW-Sens">
 	</SPAN>
 	<!-- Selecteur VHF UHF -->
-	<SPAN style="position: absolute; left: 37px; top: 242px; width: 40px; height: 100px">
-	<img src="images/Switch-bas.gif" width="40" height="100" id="ARKUD-SW-VHF">
+	<SPAN style="position: absolute; left: 17px; top: 252px; width: 40px; height: 100px">
+	<img src="images/Switch-Metal-D3.gif" width="80" height="80" id="ARKUD-SW-VHF">
 	</SPAN>
 	
 	<!-- Selecteur Channel -->
-	<SPAN style="position: absolute; left: 355px; top: 285px; width: 60px; height: 180px">
-	<img src="images/arkUD/Selecteur_short.gif" width="60" height="180" id="ARKUD-Chan">
+	<SPAN style="position: absolute; left: 355px; top: 290px; width: 60px; height: 180px">
+	<img src="images/Selecteur_demi.gif" width="60" height="150" id="ARKUD-Chan">
 	</SPAN>
 	
 	<!-- Voyant Narrow -->
@@ -964,13 +982,13 @@
 	</map> 
 	
 	<!-- Aiguille -->
-	<SPAN style="position: absolute; left: 250px; top: 20px; width: 250px; height: 250px">
-	<img src="images/Aig_drift.gif" width="250" height="250" id="FUEL_Aig">
+	<SPAN style="position: absolute; left: 275px; top: 45px; width: 200px; height: 200px">
+	<img src="images/Aig_drift.gif" width="200" height="200" id="FUEL_Aig">
 	</SPAN>
 	
 	<!-- Select Tank -->
-	<SPAN style="position: absolute; left: 95px; top: 35px; width: 60px; height: 180px">
-	<img src="images/selecteur180.gif" width="60" height="180" id="FUEL-Select">
+	<SPAN style="position: absolute; left: 108px; top: 60px; width: 40px; height: 120px">
+	<img src="images/selecteur180.gif" width="40" height="120" id="FUEL-Select">
 	</SPAN>
 	
 

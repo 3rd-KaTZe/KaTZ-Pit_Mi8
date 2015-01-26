@@ -4,8 +4,8 @@ function panel_arkud_update(KaTZPit_data){
 		// 1=Selecteur de Mode, 2-3=Switch Sensitivity, 4=Selecteur de Channel, 5=Volume, 6-8 Voyants
 
 		// Switch Sensotivity et UHF/VHF
-		if (dataread_posit(KaTZPit_data["ARKUD"],2) ==1) {$("#ARKUD-SW-Sens").attr('src','images/Switch-haut.gif')} else {$("#ARKUD-SW-Sens").attr('src','images/Switch-bas.gif')}
-		if (dataread_posit(KaTZPit_data["ARKUD"],3) ==1) {$("#ARKUD-SW-VHF").attr('src','images/Switch-haut.gif')} else {$("#ARKUD-SW-VHF").attr('src','images/Switch-bas.gif')}
+		if (dataread_posit(KaTZPit_data["ARKUD"],2) ==1) {$("#ARKUD-SW-Sens").attr('src','images/Switch-Metal-U3.gif')} else {$("#ARKUD-SW-Sens").attr('src','images/Switch-Metal-D3.gif')}
+		if (dataread_posit(KaTZPit_data["ARKUD"],3) ==1) {$("#ARKUD-SW-VHF").attr('src','images/Switch-Metal-U3.gif')} else {$("#ARKUD-SW-VHF").attr('src','images/Switch-Metal-D3.gif')}
 		
 		// Alarme Low Alti (deuxième digit des 
 		if (dataread_posit(KaTZPit_data["ARKUD"],6) ==1) {$("#ARKUD-V1").fadeIn()} else {$("#ARKUD-V1").fadeOut()}
@@ -37,8 +37,8 @@ function panel_ark9_update(KaTZPit_data){
 
 
 		// Switch Main/Stby et TLF/TLG
-		if (dataread_posit(KaTZPit_data["ARK9_SW"],1) ==1) {$("#ARK9-SW-MAIN").attr('src','images/Switch-dr.gif')} else {$("#ARK9-SW-MAIN").attr('src','images/Switch-ga.gif')}
-		if (dataread_posit(KaTZPit_data["ARK9_SW"],2) ==1) {$("#ARK9-SW-TLF").attr('src','images/Switch-haut.gif')} else {$("#ARK9-SW-TLF").attr('src','images/Switch-bas.gif')}
+		if (dataread_posit(KaTZPit_data["ARK9_SW"],1) ==1) {$("#ARK9-SW-MAIN").attr('src','images/Switch-Metal-R3.gif')} else {$("#ARK9-SW-MAIN").attr('src','images/Switch-Metal-L3.gif')}
+		if (dataread_posit(KaTZPit_data["ARK9_SW"],2) ==1) {$("#ARK9-SW-TLF").attr('src','images/Switch-Metal-U3.gif')} else {$("#ARK9-SW-TLF").attr('src','images/Switch-Metal-D3.gif')}
 		
 
 		// Switch Off/Comp/ANT/Loop Translation
