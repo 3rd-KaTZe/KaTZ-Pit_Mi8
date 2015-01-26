@@ -102,8 +102,13 @@ function panel_instrument_engine(KaTZPit_data){
 		var RPM_Eng = dataread_split_2(KaTZPit_data["Eng_rpm"])
 		instrument_RPM2(RPM_Eng[1]/10,RPM_Eng[0]/10)
 
+		// Températures Moteurs  -----------------------------------------------------------------------------
+		var Temp_Eng = dataread_split_2(KaTZPit_data["Eng_temp"])
+		instrument_EngTemp(Temp_Eng[1],Temp_Eng[0])
 
-
+		
+		
+		
 }
 
 function panel_instrument_rotor(KaTZPit_data){		

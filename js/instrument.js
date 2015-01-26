@@ -109,6 +109,26 @@ function instrument_Altitude1000(val){
 
 }
 
+function instrument_APU(temp,press){
+	var t_origine = -115
+	var p_origine = -60
+	
+	var t_gain = 0.23
+	var p_gain = 0.12
+	
+	$("#APU-DEG_A").css({
+		'-moz-transform':'rotate('+(t_origine+t_gain*temp)+'deg)',
+		'-webkit-transform':'rotate('+(t_origine+t_gain*temp)+'deg)',
+		'-ms-transform':'rotate('+(t_origine+t_gain*temp)+'deg)',
+	})
+
+	$("#APU-AIR_A").css({
+		'-moz-transform':'rotate('+(p_origine+p_gain*press)+'deg)',
+		'-webkit-transform':'rotate('+(p_origine+p_gain*press)+'deg)',
+		'-ms-transform':'rotate('+(p_origine+p_gain*press)+'deg)',
+	})
+}
+
 
 function instrument_Bille(aiguille,bille){
 	var a_origine = 0
@@ -178,7 +198,7 @@ function instrument_Pitch(val){
 }
 
 function instrument_Power(pct_L, pct_R, index){
-	var x_gain = -0.95
+	var x_gain = -1.5
 
 	// Jauge Gauche  fonction de scale (agrandir la gauge)
 	// On fixe l'origine du "scale down" en bas
@@ -325,6 +345,22 @@ function instrument_Sling(Sling_L, Sling_R, Sling_F, Sling_B, Sling_V){
 	})
 }	
 
+function instrument_EngTemp(left,right){
+	var t_origine = -135
+	var t_gain = 0.27
+	
+	$("#Eng_ExTemp_L").css({
+		'-moz-transform':'rotate('+(t_origine+t_gain*left)+'deg)',
+		'-webkit-transform':'rotate('+(t_origine+t_gain*left)+'deg)',
+		'-ms-transform':'rotate('+(t_origine+t_gain*left)+'deg)',
+	})
+	
+	$("#Eng_ExTemp_R").css({
+		'-moz-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
+		'-webkit-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
+		'-ms-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
+	})
+}
 
 function instrument_Vario(val){
 	var a_origine = -90

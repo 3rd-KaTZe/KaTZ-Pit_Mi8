@@ -83,6 +83,9 @@ function Pit_Start(plane){
 		
 	// Initialisation de la Radio
 	panel_radio_init(KaTZPit_data);
+	
+	// Initialisation des capots de switch
+	Cmd_Capot = Cmd_Capot_init()
 
 	// Affichage Initial
 	pit_main();

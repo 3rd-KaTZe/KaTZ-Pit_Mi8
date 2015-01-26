@@ -3,13 +3,17 @@ function panel_apu_update(KaTZPit_data){
 // Températures	Pression
 
 		APU_data = dataread_split_2(KaTZPit_data["APU_Data"])
+		instrument_APU(APU_data[0],APU_data[1])
+		
+		
+		
 		// Conversion de la valeur échelle APU_Data <> valeur réelle pour affichage
-		document.getElementById('APU-DEG').innerHTML = APU_T(APU_data[0]).toFixed(0)
-		if (APU_T(APU_data[0]) < 750){document.getElementById('APU-DEG').style.color = 'green'}
-		else {document.getElementById('APU-DEG').style.color = 'red'}
+		//document.getElementById('APU-DEG').innerHTML = APU_T(APU_data[0]).toFixed(0)
+		//if (APU_T(APU_data[0]) < 750){document.getElementById('APU-DEG').style.color = 'green'}
+		//else {document.getElementById('APU-DEG').style.color = 'red'}
 		
 		// Conversion échelle de 0.04 à 0.95, pour un range de pression de zero à 3.0
-		document.getElementById('APU-AIR').innerHTML = ((APU_data[1]-40)/910*3.0).toFixed(1)
+		//document.getElementById('APU-AIR').innerHTML = ((APU_data[1]-40)/910*3.0).toFixed(1)
 		
 	// Voyants de l'APU
 	// On va lire la valeur de chaque voyant dans la chaine "APU_Voyants"
@@ -106,13 +110,6 @@ function panel_start_update(KaTZPit_data){
 			$("#F-Pump-C").data('internal-id','10200601')}	
 				
 		
-		
-	// RPM Moteur et Rotor
-		EngRpm = dataread_split_2(KaTZPit_data["Eng_rpm"])
-		document.getElementById('F-RPM-G').innerHTML = (EngRpm[1]/10).toFixed(0)
-		document.getElementById('F-RPM-D').innerHTML = (EngRpm[0]/10).toFixed(0)
-		document.getElementById('F-RPM-RO').innerHTML = (KaTZPit_data["RPM_Rot"]/10).toFixed(0)
-		
 	// Selecteur de moteur
 		// Left / Right		
 		if (KaTZPit_data["Start_Sel"] ==-1) {$("#F-SW-1").attr('src','images/Switch-ga.gif')}	
@@ -126,8 +123,8 @@ function panel_start_update(KaTZPit_data){
 		if (KaTZPit_data["Start_Typ"] ==-1) {$("#F-SW-2").attr('src','images/Switch-bas.gif')}		
 		
 	// Voyants de démarrage
-		// Ignition		
-		if (dataread_posit(KaTZPit_data["Start_V"],1 ==1)) {$("#Start-V-1").fadeIn()} else {$("#Start-V-1").fadeOut()}
-		if (dataread_posit(KaTZPit_data["Start_V"],2 ==1)) {$("#Start-V-2").fadeIn()} else {$("#Start-V-2").fadeOut()}
+		// Ignition	
+		if (dataread_posit(KaTZPit_data["Start_V"],1) == 1) {$("#Start-V-1").fadeIn()} else {$("#Start-V-1").fadeOut()}
+		if (dataread_posit(KaTZPit_data["Start_V"],2) == 1) {$("#Start-V-2").fadeIn()} else {$("#Start-V-2").fadeOut()}
 
 }
