@@ -5,8 +5,6 @@ function panel_apu_update(KaTZPit_data){
 		APU_data = dataread_split_2(KaTZPit_data["APU_Data"])
 		instrument_APU(APU_data[0],APU_data[1])
 		
-		
-		
 		// Conversion de la valeur échelle APU_Data <> valeur réelle pour affichage
 		//document.getElementById('APU-DEG').innerHTML = APU_T(APU_data[0]).toFixed(0)
 		//if (APU_T(APU_data[0]) < 750){document.getElementById('APU-DEG').style.color = 'green'}
