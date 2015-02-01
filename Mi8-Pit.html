@@ -40,6 +40,7 @@
 	<script type="text/javascript" src="js/panel_instrument.js"></script>
 	<script type="text/javascript" src="js/panel_navsys.js"></script>
 	<script type="text/javascript" src="js/panel_radio.js"></script>
+	<script type="text/javascript" src="js/panel_weapon.js"></script>
 
     
 </head>
@@ -376,13 +377,13 @@
 		<area shape="rect" coords="10,320,90,380" href="javascript:menu_Toggle('Vierge')">		
 		<area shape="rect" coords="10,380,90,420" href="javascript:menu_Toggle('Oil')">
 		<area shape="rect" coords="10,420,90,480" href="javascript:menu_Toggle('Rotor')">
-		<area shape="rect" coords="10,480,90,520" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,480,90,520" href="javascript:menu_Toggle('Fuel')">
 		<area shape="rect" coords="10,520,90,580" href="javascript:menu_Toggle('Vierge')">
 		<area shape="rect" coords="10,580,90,620" href="javascript:menu_Toggle('Doppler')">
 		<area shape="rect" coords="10,620,90,680" href="javascript:menu_Toggle('ARK_9')">
 		<area shape="rect" coords="10,680,90,720" href="javascript:menu_Toggle('ARK_UD')">
 		<area shape="rect" coords="10,720,90,780" href="javascript:menu_Toggle('Vierge')">
-		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('Fuel')">
+		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('UV26')">
 		<area shape="rect" coords="10,820,90,880" href="javascript:menu_Toggle('Vierge')">
 		<area shape="rect" coords="10,880,90,920" href="javascript:menu_Toggle('Radio_360')">
 		<area shape="rect" coords="10,920,90,980" href="javascript:menu_Toggle('Vierge')">
@@ -1120,6 +1121,63 @@
 </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+<div id="Panel_UV26">
+
+	<img src="images/weapon/UV26.gif" width="250" height="480" usemap="#UV26_P">
+
+	<map name="UV26_P">
+
+								
+			<!-- Bouton Side Left-Right -->
+			<area shape="rect" coords="0,110,45,150" href="javascript:CmdDCSRaw('14800200')">
+			<area shape="rect" coords="45,110,90,150" href="javascript:CmdDCSRaw('44800205')">
+			<area shape="rect" coords="90,110,125,150" href="javascript:CmdDCSRaw('14800201')">
+			
+			<!-- Bouton Quant Num -->
+			<area shape="rect" coords="130,110,175,150" href="javascript:CmdDCSRaw('14800300')">
+			<area shape="rect" coords="200,110,250,150" href="javascript:CmdDCSRaw('14800301')">
+			
+			<!-- Boutons Programme -->
+			<area shape="rect" coords="40,210,110,270" href="javascript:CmdDCSRaw('54800401')">
+			<area shape="rect" coords="140,210,210,270" href="javascript:CmdDCSRaw('54800601')">
+			<area shape="rect" coords="40,280,110,340" href="javascript:CmdDCSRaw('54800501')">
+			<area shape="rect" coords="140,280,210,340" href="javascript:CmdDCSRaw('54800801')">
+			<area shape="rect" coords="40,350,110,410" href="javascript:CmdDCSRaw('54800901')">
+			<area shape="rect" coords="140,350,210,410" href="javascript:CmdDCSRaw('54800701')">
+			
+			<!-- Bouton On Off -->
+			<area shape="rect" coords="10,430,70,470" href="javascript:CmdDCSRaw('14801000')">
+			<area shape="rect" coords="180,430,240,470" href="javascript:CmdDCSRaw('14801001')">
+	</map> 
+	
+	
+	
+	<!-- Voyant Left Right -->
+	<SPAN style="position: absolute; left: 10px; top: 40px; width: 20px; height: 20px">
+	<img src="images/weapon/Btn-Rd_rouge.gif" width="20" height="20"  id="UV26_Left">
+	</SPAN>
+	
+	<SPAN style="position: absolute; left: 220px; top: 40px; width: 20px; height: 20px">
+	<img src="images/weapon/Btn-Rd_rouge.gif" width="20" height="20"  id="UV26_Right">
+	</SPAN>
+	
+	<!-- Quantité Flare -->
+	<SPAN style="position: absolute; left: 40px; top: 40px; width: 140px; height: 70px ; color:red; text-align:right; font-size:400%" id="UV26_flare"> </SPAN>
+	
+	<!-- Selecteur Man/Auto-->
+	<SPAN style="position: absolute; left: 30px; top: 133px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_LR"> </SPAN>
+	
+	<SPAN style="position: absolute; left: 140px; top: 133px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_Num"> </SPAN>
+	
+	<!-- Selecteur On / Off-->
+	<SPAN style="position: absolute; left: 86px; top: 407px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_On"> </SPAN>
+	
+</div>
   
 </body>
 </html>
