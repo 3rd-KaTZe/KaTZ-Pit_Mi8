@@ -6,8 +6,8 @@
 
 function panel_fuel_update(KaTZPit_data){
 
-		// Sur le Mi-8 la quantité de Fuel Lu et la position du selecteur sont sotckés dans "Fuel_AV"
-		var Fuel_Data = dataread_split_2(KaTZPit_data["Fuel_AV"])
+		// Sur le Mi-8 la quantité de Fuel Lu et la position du selecteur sont sotckés dans "Fuel_1"
+		var Fuel_Data = dataread_split_2(KaTZPit_data["Fuel_1"])
 				
 		// Rotation du selecteur et de l'aiguille de jauge
 		Jauge_Fuel(Fuel_Data[1]*200,Fuel_Data[0] )
