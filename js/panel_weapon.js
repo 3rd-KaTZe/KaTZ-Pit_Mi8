@@ -22,11 +22,25 @@ function panel_uv26_update(KaTZPit_data){
 	
 	// Affichage Flare restantes
 	
-	document.getElementById('UV26_flare').innerHTML = dataread_split_2(KaTZPit_data["UV26_Data"])[0]
+	//document.getElementById('UV26_flare').innerHTML = dataread_split_2(KaTZPit_data["UV26_Data"])[0]
 	
 	// Switch On / Off
-	if (dataread_posit(KaTZPit_data["UV26_Flag"],5) ==1) {$("#UV_SW_On").attr('src','images/Switch-Metal-R3.gif')} 
-	else {$("#UV_SW_On").attr('src','images/Switch-Metal-L3.gif')}
+	if (dataread_posit(KaTZPit_data["UV26_Flag"],5) ==1) {
+		// Affichage du switch en position on
+		$("#UV_SW_On").attr('src','images/Switch-Metal-R3.gif')
+		// Allumage de l'affichage digital
+		document.getElementById("UV26_flare").style.display = "block"
+		// Affichage Flare restantes
+		document.getElementById('UV26_flare').innerHTML = dataread_split_2(KaTZPit_data["UV26_Data"])[0]
+		
+	
+} 
+	else {
+		// Affichage du switch en position off
+		$("#UV_SW_On").attr('src','images/Switch-Metal-L3.gif')
+		// Extinction de l'affichage digital
+		document.getElementById("UV26_flare").style.display = "none"
+	}
 	
 
 }
