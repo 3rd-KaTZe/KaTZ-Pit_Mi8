@@ -64,6 +64,11 @@ function menu_Toggle(panel){
 	
 	if (Panel_On["Doppler"] == 0) {document.getElementById("Panel_Doppler").style.display = "none"}
 	else {document.getElementById("Panel_Doppler").style.display = "block"}
+
+	if (Panel_On["UV26"] == 0) {document.getElementById("Panel_UV26").style.display = "none"}
+	else {document.getElementById("Panel_UV26").style.display = "block"}
+
+		
 }
 
 function menu_ARK9_init(){
