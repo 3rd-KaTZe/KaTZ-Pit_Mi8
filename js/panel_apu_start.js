@@ -28,9 +28,9 @@ function panel_apu_update(KaTZPit_data){
 		
 	// Selecteur de type de demarrage
 		// Start / Crank / False		
-		if (KaTZPit_data["APU_Typ"] ==1) {$("#APU-SW-1").attr('src','images/Switch-haut.gif')}	
-		if (KaTZPit_data["APU_Typ"] ==0) {$("#APU-SW-1").attr('src','images/Switch-V-mid.gif')}	
-		if (KaTZPit_data["APU_Typ"] ==-1) {$("#APU-SW-1").attr('src','images/Switch-bas.gif')}	
+		if (KaTZPit_data["APU_Typ"] ==1) {$("#APU-SW-1").attr('src','images/switch/Switch-Metal-U4.png') ; $("#APU-SW-1").data('internal-id','30301201')}	
+		if (KaTZPit_data["APU_Typ"] ==0) {$("#APU-SW-1").attr('src','images/switch/Switch-Metal-C4V.png') ; $("#APU-SW-1").data('internal-id','30301200')}	
+		if (KaTZPit_data["APU_Typ"] ==-1) {$("#APU-SW-1").attr('src','images/switch/Switch-Metal-D4.png') ; $("#APU-SW-1").data('internal-id','30301202')}	
 		
 			
 		
@@ -110,15 +110,15 @@ function panel_start_update(KaTZPit_data){
 		
 	// Selecteur de moteur
 		// Left / Right		
-		if (KaTZPit_data["Start_Sel"] ==-1) {$("#F-SW-1").attr('src','images/Switch-ga.gif')}	
-		if (KaTZPit_data["Start_Sel"] ==0) {$("#F-SW-1").attr('src','images/Switch-H-mid.gif')}	
-		if (KaTZPit_data["Start_Sel"] ==1) {$("#F-SW-1").attr('src','images/Switch-dr.gif')}		
+		if (KaTZPit_data["Start_Sel"] ==-1) {$("#F-SW-1").attr('src','images/switch/Switch-Metal-L4.png')}	
+		if (KaTZPit_data["Start_Sel"] ==0) {$("#F-SW-1").attr('src','images/switch/Switch-Metal-C4H.png')}	
+		if (KaTZPit_data["Start_Sel"] ==1) {$("#F-SW-1").attr('src','images/switch/Switch-Metal-R4.png')}		
 		
 	// Selecteur de type de démarrage
 		// Start / Crank / False		
-		if (KaTZPit_data["Start_Typ"] ==1) {$("#F-SW-2").attr('src','images/Switch-haut.gif')}	
-		if (KaTZPit_data["Start_Typ"] ==0) {$("#F-SW-2").attr('src','images/Switch-V-mid.gif')}	
-		if (KaTZPit_data["Start_Typ"] ==-1) {$("#F-SW-2").attr('src','images/Switch-bas.gif')}		
+		if (KaTZPit_data["Start_Typ"] ==1) {$("#F-SW-2").attr('src','images/switch/Switch-Metal-U4.png')}	
+		if (KaTZPit_data["Start_Typ"] ==0) {$("#F-SW-2").attr('src','images/switch/Switch-Metal-C4V.png')}	
+		if (KaTZPit_data["Start_Typ"] ==-1) {$("#F-SW-2").attr('src','images/switch/Switch-Metal-D4.png')}		
 		
 	// Voyants de démarrage
 		// Ignition	

@@ -62,7 +62,8 @@ function pit_main(){
 	if (Panel_On["ARK_9"]==1){panel_ark9_update(KaTZPit_data)}
 	if (Panel_On["ARK_UD"]==1){panel_arkud_update(KaTZPit_data)}
 	if (Panel_On["Fuel"]==1){panel_fuel_update(KaTZPit_data)}	
-	if (Panel_On["UV26"]==1){panel_uv26_update(KaTZPit_data)}	
+	if (Panel_On["UV26"]==1){panel_uv26_update(KaTZPit_data)}
+	if (Panel_On["Light"]==1){panel_electric_light(KaTZPit_data)}	
 	
 	
 	CmdSend()
