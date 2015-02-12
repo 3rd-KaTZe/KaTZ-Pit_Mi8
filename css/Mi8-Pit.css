@@ -177,15 +177,15 @@ p {
 
 #Panel_Circuit_Breaker {
 	position: absolute;
-	top: 10px;
-	left: 1850px;
+	top: 30px;
+	left: 1860px;
 	/* Dimension 250 x 150			              */
 	
 }
 
 #Panel_Electric_DC {
 	position: absolute;
-	top: 170px;
+	top: 220px;
 	left: 1810px;
 	/* Dimension 500 x 300			              */
 	
@@ -193,7 +193,7 @@ p {
 
 #Panel_Electric_AC {
 	position: absolute;
-	top: 580px;
+	top: 630px;
 	left: 1810px;
 	/* Dimension 250 x 450			              */
 	
@@ -315,6 +315,14 @@ p {
 	position: absolute;
 	top: 010px;
 	left: 2320px;
+	/* Dimension 500 x 200			              */
+	
+}
+
+#Panel_Light {
+	position: absolute;
+	top: 010px;
+	left: 1810px;
 	/* Dimension 500 x 200			              */
 	
 }

@@ -67,6 +67,9 @@ function menu_Toggle(panel){
 
 	if (Panel_On["UV26"] == 0) {document.getElementById("Panel_UV26").style.display = "none"}
 	else {document.getElementById("Panel_UV26").style.display = "block"}
+	
+	if (Panel_On["Light"] == 0) {document.getElementById("Panel_Light").style.display = "none"}
+	else {document.getElementById("Panel_Light").style.display = "block"}
 
 		
 }
