@@ -1,6 +1,7 @@
 var serverws = {
 	// IP + Port de la machine qui fait tourner le KaTZ-Link
 	ip : "192.168.0.10",
+	//ip : "127.0.0.1",
 	port : 9000,
 	auto_connect : false,   //true,
 	delay : 15000,
@@ -13,6 +14,12 @@ var serverws = {
 function serverws_connect(){
 
 	console.log("Essai Connection " + serverws.ip + ":" + serverws.port);
+	
+	try {
+        serverws.socket.close()
+     } catch(exception) {}
+    
+	
 	menu_connection_led(1) // voyant de connection orange
 	
 	var url = "ws://" + serverws.ip + ":" + serverws.port + "/";
