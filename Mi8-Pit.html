@@ -350,21 +350,26 @@
 <!-- Panneau de démarrage du KaTZ-Pit + Canopy + Eject -->
 <div id="Panel_Connection">
 
-	<img src="images/emergency/Connection-Panel-Mi8.gif" width="210" height="200"   usemap="#Connection_P"> 
+	<img src="images/emergency/Connection-Panel-Mi8.png" width="210" height="250"   usemap="#Connection_P"> 
 
 	<!-- Mapping du bouton, Demarrage KaTZ-Pit , et ouverture porte -->
 	<map name="Connection_P">
 		<area shape="circle" coords="55,75,45" href="javascript:Pit_Start(9)">
-		<area shape="rect" coords="10,150,200,190" href="javascript:Door()">
+		<area shape="rect" coords="10,140,110,180" href="javascript:DCS_Focus()">
+		<area shape="rect" coords="10,200,200,250" href="javascript:Door()">
 	</map>
 
 	<!-- Voyants de connection KaTZ-Link -->
-	<SPAN style="position: absolute; left: 122px; top: 29px">
+	<SPAN style="position: absolute; left: 120px; top: 70px">
 	<img src="images/emergency/z_Led-Rouge.gif" width="80" height="40"  id="Led_Connect"> </SPAN>
+	
+	<!-- Voyants de connection DCS Focus -->
+	<SPAN style="position: absolute; left: 119px; top: 140px">
+	<img src="images/emergency/z_Led-Verte.gif" width="80" height="40"  id="Led_DCS"> </SPAN>
 
 	<!-- Zone d'affichage de l'adresse IP -->
-	<SPAN style="position: absolute; left: 117px; top: 100px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:75%" id="IP_Host"> </SPAN>
-	<SPAN style="position: absolute; left: 120px; top: 120px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:85%" id="IP_Port"> </SPAN>
+	<SPAN style="position: absolute; left: 115px; top: 16px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:80%" id="IP_Host"> </SPAN>
+	<SPAN style="position: absolute; left: 115px; top: 30px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:80%" id="IP_Port"> </SPAN>
 
 </div>
 
