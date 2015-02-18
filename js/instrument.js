@@ -347,7 +347,12 @@ function instrument_Sling(Sling_L, Sling_R, Sling_F, Sling_B, Sling_V){
 
 function instrument_EngTemp(left,right){
 	var t_origine = -135
-	var t_gain = 0.27
+	var t_gain = 0.225
+
+	var m_origine = 180
+	var m_gain = 3.6
+	var leftm = left % 100
+	var rightm = right % 100
 	
 	$("#Eng_ExTemp_L").css({
 		'-moz-transform':'rotate('+(t_origine+t_gain*left)+'deg)',
@@ -359,6 +364,18 @@ function instrument_EngTemp(left,right){
 		'-moz-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
 		'-webkit-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
 		'-ms-transform':'rotate('+(t_origine+t_gain*right)+'deg)',
+	})
+
+	$("#AM_TEM_mL").css({
+		'-moz-transform':'rotate('+(m_origine+m_gain*leftm)+'deg)',
+		'-webkit-transform':'rotate('+(m_origine+m_gain*leftm)+'deg)',
+		'-ms-transform':'rotate('+(m_origine+m_gain*leftm)+'deg)',
+	})
+	
+	$("#AM_TEM_mR").css({
+		'-moz-transform':'rotate('+(m_origine+m_gain*rightm)+'deg)',
+		'-webkit-transform':'rotate('+(m_origine+m_gain*rightm)+'deg)',
+		'-ms-transform':'rotate('+(m_origine+m_gain*rightm)+'deg)',
 	})
 }
 

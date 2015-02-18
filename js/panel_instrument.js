@@ -4,6 +4,8 @@
 
 // fonctions de gestion des instruments dans "instrument.js"
 
+
+
 function panel_instrument_flight(KaTZPit_data){
 	
 	
