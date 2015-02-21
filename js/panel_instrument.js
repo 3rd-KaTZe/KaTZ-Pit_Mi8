@@ -10,6 +10,23 @@ function panel_instrument_flight(KaTZPit_data){
 	
 	
 		// Animation des instruments de vol ===========================================================
+
+		// Montre de Bord
+		var hr = Math.floor(KaTZPit_data["Clock"] / 3600)
+		var mn = Math.floor(KaTZPit_data["Clock"] % 3600 / 60)
+		var sec = KaTZPit_data["Clock"] % 60
+			
+		var hrflt = Math.floor(KaTZPit_data["TimeFly"] / 3600)
+		var mnflt = Math.floor(KaTZPit_data["TimeFly"] % 3600 / 60)
+			
+		var mnchrono = Math.floor(KaTZPit_data["Chrono"] / 60)
+		var secchrono = KaTZPit_data["Chrono"] % 60
+			
+		instrument_Clock(hr,mn,sec,hrflt,mnflt,mnchrono,secchrono)
+		console.log(hrflt)
+		console.log(mnflt)
+		
+		
 				
 		instrument_Airspeed(KaTZPit_data["IAS"])
 		instrument_Vario(KaTZPit_data["Vario"])

@@ -49,6 +49,7 @@ p {
 	/* Dimension 400 x 300			              */
 }
 
+
 #Cadran_Pitch {
 	position: absolute;
 	top: 550px;
@@ -177,15 +178,15 @@ p {
 
 #Panel_Circuit_Breaker {
 	position: absolute;
-	top: 30px;
-	left: 1860px;
+	top: 20px;
+	left: 1810px;
 	/* Dimension 250 x 150			              */
 	
 }
 
 #Panel_Electric_DC {
 	position: absolute;
-	top: 220px;
+	top: 020px;
 	left: 1810px;
 	/* Dimension 500 x 300			              */
 	
@@ -193,15 +194,22 @@ p {
 
 #Panel_Electric_AC {
 	position: absolute;
-	top: 630px;
+	top: 430px;
 	left: 1810px;
 	/* Dimension 250 x 450			              */
 	
 }
 
+#Cadran_Clock {
+	position: absolute;
+	top: 720px;
+	left: 1810px;
+	/* Dimension 400 x 400			              */
+}
+
 #Panel_APU {
 	position: absolute;
-	top: 10px;
+	top: 20px;
 	left: 2320px;
 	/* Dimension 500 x 250			              */
 	font-family:arial, sans-serif;
@@ -214,7 +222,7 @@ p {
 
 #Panel_Start {
 	position: absolute;
-	top: 410px;
+	top: 430px;
 	left: 2320px;
 	/* Dimension 500 x 400			              */
 	font-family:arial, sans-serif;
