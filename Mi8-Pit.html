@@ -89,6 +89,35 @@
 
 </div>
 
+<div id="Cadran_Clock">
+	<img src="images/analog/Clock-RU.png" width="330" height="330" usemap="#Clock_P"> 
+
+	<map name="Clock_P">
+		<area shape="circle" coords="40,290,30" href="javascript:CmdDCSRaw('54500101')">
+		<area shape="circle" coords="290,290,30" href="javascript:CmdDCSRaw('54500401')">
+	</map> 
+	
+	<!-- Aiguille 	-->
+	<SPAN style="position: absolute; left: 150px; top: 0px; width: 30px; height: 330px">
+	<img src="images/analog/Clock-RU-AIG-hr.png" width="30" height="330" id="AIG_Clock_hr"> </SPAN>	
+	<SPAN style="position: absolute; left: 150px; top: 0px; width: 30px; height: 330px">
+	<img src="images/analog/Clock-RU-AIG-mn.png" width="30" height="330" id="AIG_Clock_mn"> </SPAN>		
+	<SPAN style="position: absolute; left: 150px; top: 0px; width: 30px; height: 330px">
+	<img src="images/analog/Clock-RU-AIG-sec.png" width="30" height="330" id="AIG_Clock_sec"> </SPAN>
+	
+	<SPAN style="position: absolute; left: 150px; top: 165px; width: 30px; height: 120px">
+	<img src="images/analog/Clock-RU-AIG-mn-chrono.png" width="30" height="120" id="AIG_Chrono_mn"> </SPAN>	
+	<SPAN style="position: absolute; left: 150px; top: 165px; width: 30px; height: 120px">
+	<img src="images/analog/Clock-RU-AIG-Sec-chrono.png" width="30" height="120" id="AIG_Chrono_sec"> </SPAN>			
+	
+	<SPAN style="position: absolute; left: 150px; top: 45px; width: 30px; height: 120px">
+	<img src="images/analog/Clock-RU-AIG-hr-flt.png" width="30" height="120" id="AIG_FLT_hr"> </SPAN>	
+	<SPAN style="position: absolute; left: 150px; top: 45px; width: 30px; height: 120px">
+	<img src="images/analog/Clock-RU-AIG-mn-chrono.png" width="30" height="120" id="AIG_FLT_mn"> </SPAN>			
+
+</div>
+
+
 
 <div id="Cadran_Pitch">
 	<img src="images/analog/Pitch.gif" width="250" height="250"  >
@@ -407,31 +436,13 @@
 </div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
-<!-- Panneau de selection des groupe de circuit breakers -->
-<div id="Panel_Circuit_Breaker">
 
-<img src="images/electric/Circuit-Breaker.gif" width="250" height="150" usemap="#Panel_Breakers"> 
-
-	<map name="Panel_Breakers">
-		<area shape="rect" coords="15,30,75,60" href="javascript:CmdDCSRaw('50102201')">
-		<area shape="rect" coords="15,70,75,100" href="javascript:CmdDCSRaw('50102301')">
-		<area shape="rect" coords="15,110,75,140" href="javascript:CmdDCSRaw('50102401')">
-		<area shape="rect" coords="95,30,155,60" href="javascript:CmdDCSRaw('50102501')">
-		<area shape="rect" coords="95,70,155,100" href="javascript:CmdDCSRaw('50102601')">
-		<area shape="rect" coords="95,110,155,140" href="javascript:CmdDCSRaw('50102701')">
-		<area shape="rect" coords="175,30,235,60" href="javascript:CmdDCSRaw('50102801')">
-		<area shape="rect" coords="175,70,235,100" href="javascript:CmdDCSRaw('50102901')">
-		<area shape="rect" coords="175,110,235,140" href="javascript:CmdDCSRaw('50103001')">
-		
-	</map>
-
-</div>
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- Panneau Electrique DC -->
 <div id="Panel_Electric_DC">
 
-<img src="images/electric/Electric_DC-Power_Da.gif" width="500" height="400" usemap="#Panel_DC"> 
+<img src="images/electric/Electric_DC-Power_Da.png" width="500" height="400" usemap="#Panel_DC"> 
 
 	<map name="Panel_DC">
 
@@ -521,7 +532,7 @@
 <!-- Panneau Electrique AC -->
 <div id="Panel_Electric_AC">
 
-<img src="images/electric/Electric_AC-Power_Da.gif" width="500" height="250" usemap="#Panel_AC"> 
+<img src="images/electric/Electric_AC-Power_Da.png" width="500" height="250" usemap="#Panel_AC"> 
 
 	<map name="Panel_AC">
 
@@ -591,10 +602,32 @@
 
 
 </div>
+
+<!-- Panneau de selection des groupe de circuit breakers -->
+<div id="Panel_Circuit_Breaker">
+
+<img src="images/electric/Circuit-Breaker.png" width="500" height="150" usemap="#Panel_Breakers"> 
+
+	<map name="Panel_Breakers">
+		<area shape="rect" coords="30,30,150,60" href="javascript:CmdDCSRaw('50102201')">
+		<area shape="rect" coords="30,70,150,100" href="javascript:CmdDCSRaw('50102301')">
+		<area shape="rect" coords="30,110,150,140" href="javascript:CmdDCSRaw('50102401')">
+		<area shape="rect" coords="190,30,310,60" href="javascript:CmdDCSRaw('50102501')">
+		<area shape="rect" coords="190,70,310,100" href="javascript:CmdDCSRaw('50102601')">
+		<area shape="rect" coords="190,110,310,140" href="javascript:CmdDCSRaw('50102701')">
+		<area shape="rect" coords="350,30,470,60" href="javascript:CmdDCSRaw('50102801')">
+		<area shape="rect" coords="350,70,470,100" href="javascript:CmdDCSRaw('50102901')">
+		<area shape="rect" coords="350,110,470,140" href="javascript:CmdDCSRaw('50103001')">
+		
+	</map>
+
+</div>
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
 <div id="Panel_APU">
 
-	<img src="images/apu/APU_Mi-8_analog.gif" width="500" height="400"   usemap="#Panel_APU">
+	<img src="images/apu/APU_Mi-8_analog.png" width="500" height="400"   usemap="#Panel_APU">
 	
 	<!-- Mapping de selection de démarrage et d'arrêt-->
 	<map name="Panel_APU">
@@ -652,7 +685,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <div id="Panel_Start">
 
-	<img src="images/fuel/Fuel-Panel_Mi8_D.gif" width="500" height="400"   usemap="#Panel_Start"> 
+	<img src="images/fuel/Fuel-Panel_Mi8_D.png" width="500" height="400"   usemap="#Panel_Start"> 
 
 	<!-- Mapping du bouton de lecture de niveau de fuel (13005101) -->
 	<!-- Switch de Type de demarrage et de Selection de moteur -->
@@ -764,7 +797,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <div id="Panel_Oil">
 
-	<img src="images/panel/Temp-Panel_50_D.gif" width="400" height="200" > 
+	<img src="images/panel/Temp-Panel_50.png" width="400" height="200" > 
 
 	
 
@@ -785,7 +818,7 @@
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 <div id="Panel_Doppler">
-	<img src="images/doppler/Doppler.gif" width="250" height="250" usemap="#Panel_Doppler"> 
+	<img src="images/doppler/Doppler.png" width="250" height="250" usemap="#Panel_Doppler"> 
 
 	<!-- Mapping des boutons On/Off-->
 	<map name="Panel_Doppler">
@@ -1142,7 +1175,7 @@
 
 <div id="Panel_UV26">
 
-	<img src="images/weapon/UV26.gif" width="250" height="480" usemap="#UV26_P">
+	<img src="images/weapon/UV26.png" width="250" height="480" usemap="#UV26_P">
 
 	<map name="UV26_P">
 
