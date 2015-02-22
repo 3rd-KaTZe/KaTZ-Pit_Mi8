@@ -23,11 +23,8 @@ function panel_instrument_flight(KaTZPit_data){
 		var secchrono = KaTZPit_data["Chrono"] % 60
 			
 		instrument_Clock(hr,mn,sec,hrflt,mnflt,mnchrono,secchrono)
-		console.log(hrflt)
-		console.log(mnflt)
-		
-		
-				
+			
+		// Badin, Vario		
 		instrument_Airspeed(KaTZPit_data["IAS"])
 		instrument_Vario(KaTZPit_data["Vario"])
 		
