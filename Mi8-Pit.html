@@ -39,6 +39,7 @@
 	<script type="text/javascript" src="js/panel_fuel_oil.js"></script>
 	<script type="text/javascript" src="js/panel_instrument.js"></script>
 	<script type="text/javascript" src="js/panel_navsys.js"></script>
+	<script type="text/javascript" src="js/panel_pilototo.js"></script>
 	<script type="text/javascript" src="js/panel_radio.js"></script>
 	<script type="text/javascript" src="js/panel_weapon.js"></script>
 
@@ -373,6 +374,27 @@
     
 </div>
 
+<div id="Panel_Stick">
+	<img src="images/panel/Stick_Panel.png" width="300" height="300"  > 
+
+	<!-- Indic Stick -->
+	<SPAN style="position: absolute; left: 160px; top: 120px; width: 20px; height: 20px">
+	<img src="images/panel/Stick_posit.png" width="20" height="20" id="Position_Stick">	</SPAN>	
+
+	<!-- Indic Rudder -->
+	<SPAN style="position: absolute; left: 160px; top: 240px; width: 20px; height: 20px">
+	<img src="images/panel/Stick_posit.png" width="20" height="20" id="Position_Rudder"> </SPAN>	
+
+	<!-- Indic Cyclic -->
+	<SPAN style="position: absolute; left: 25px; top: 220px; width: 20px; height: 20px">
+	<img src="images/panel/Stick_posit.png" width="20" height="20" id="Position_Collectif">	</SPAN>	
+
+	<!-- Valeur Input Pitch/Roll/Rudder/Cyclic -->
+	<SPAN style="position: absolute; left: 145px; top: 5px; width: 50px; height: 25px ; font-size:1.2em" id="PosData_Pitch"> </SPAN>
+	<SPAN style="position: absolute; left: 260px; top: 117px; width: 50px; height: 25px ; font-size:1.2em" id="PosData_Roll"> </SPAN>
+	<SPAN style="position: absolute; left: 145px; top: 275px; width: 50px; height: 25px ; font-size:1.2em" id="PosData_Rudder"> </SPAN>
+	<SPAN style="position: absolute; left: 5px; top: 240px; width: 50px; height: 25px ; font-size:1.2em" id="PosData_Collectif"> </SPAN>
+</div>
 
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx --> 
@@ -394,7 +416,7 @@
 	
 	<!-- Voyants de connection DCS Focus -->
 	<SPAN style="position: absolute; left: 119px; top: 140px">
-	<img src="images/emergency/z_Led-Verte.gif" width="80" height="40"  id="Led_DCS"> </SPAN>
+	<img src="images/emergency/z_Led-Bleu.png" width="80" height="40"  id="Led_DCS"> </SPAN>
 
 	<!-- Zone d'affichage de l'adresse IP -->
 	<SPAN style="position: absolute; left: 115px; top: 16px; width: 90px; height: 25px ; color:green ; text-align:center; font-size:80%" id="IP_Host"> </SPAN>
@@ -429,7 +451,7 @@
 		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('UV26')">
 		<area shape="rect" coords="10,820,90,880" href="javascript:menu_Toggle('Vierge')">
 		<area shape="rect" coords="10,880,90,920" href="javascript:menu_Toggle('Radio_360')">
-		<area shape="rect" coords="10,920,90,980" href="javascript:menu_Toggle('Vierge')">
+		<area shape="rect" coords="10,920,90,980" href="javascript:menu_Toggle('Stick')">
 
 	</map>
 

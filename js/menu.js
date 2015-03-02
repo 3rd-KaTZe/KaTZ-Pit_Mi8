@@ -12,9 +12,9 @@ function menu_connection(KaTZPit_data){
 
 function menu_connection_led(flag){
 
-	if (flag == 0) {$("#Led_Connect").attr("src","images/emergency/z_Led-Rouge.gif")}
+	if (flag == 0) {$("#Led_Connect").attr("src","images/emergency/z_Led-Rouge.png")}
 	if (flag == 1) {$("#Led_Connect").attr("src","images/emergency/z_Led-Orange.gif")}
-	if (flag == 2) {$("#Led_Connect").attr("src","images/emergency/z_Led-Verte.gif")}
+	if (flag == 2) {$("#Led_Connect").attr("src","images/emergency/z_Led-Vert.png")}
 	
 }
 
@@ -74,6 +74,16 @@ function menu_Toggle(panel){
 	
 	if (Panel_On["Light"] == 0) {document.getElementById("Panel_Light").style.display = "none"}
 	else {document.getElementById("Panel_Light").style.display = "block"}
+	
+	if (Panel_On["Stick"] == 0) {
+	document.getElementById("Panel_Stick").style.display = "none" ;
+	document.getElementById("Cadran_Drift").style.display = "block" ;	
+	}
+	else {
+	document.getElementById("Panel_Stick").style.display = "block" ; 
+	document.getElementById("Cadran_Drift").style.display = "none" ;
+	
+	}
 
 		
 }
