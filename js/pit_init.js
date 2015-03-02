@@ -13,7 +13,7 @@ function paneldata_init(){
 		Clock:0, TimeMis:0, TimeFly:0, Shoot_time:99, Chrono:0, 
 		IAS:0, TAS:8888, QNH:0, QFE:0, AltiRad_DX:50005000, AltiRad_FI:555, Mach:"---", Vario:0, Vari_unit:1,
 		AoA:0, Acc_G:0, Acc_Gmax:0, Acc_Gmin:0, 
-		Pitch:0, Bank:00, Yaw:0, ADI_FI:50005000, 
+		Pitch:0, Bank:00, Yaw:0, ADI_FI:50005000, Stick_Pos:50005000, Rudder_Pos:50005000,
 		Way:90, Route:360, Cap:0, WP_dist:0, WP_num:88, Bullseye:0, EUP:50005000,
 		Eng_rpm:50005000, Eng_temp:50005000, Power_L:0, Power_R:0, Power_X:0, COff:0,
 		RPM_Rot:0, Pitch_Rot:1, Eng_Oil_deg:50005000, GB_Oil_deg:50005000, Eng_Oil_pre:50005000, GB_Oil_pre:50005000,
@@ -57,7 +57,7 @@ function panel_On_init(){
 
 var Panel_On = { Init:0, Breakers:1, Electric_DC:1, Electric_AC:1, Light:0,
 	APU:1,  Start:1, Rotor:0, Oil:1, Fuel:0,
-	Analog_1:1, Analog_2:0, 
+	Analog_1:1, Analog_2:0, Stick:0,
 	ARK_9:0, ARK_UD:0, Doppler:1, 
 	Radio_360:0, Vierge:0, Navigation:0, Target:0, UV26:0 }
 

@@ -66,6 +66,7 @@ function pit_main(){
 	if (Panel_On["Fuel"]==1){panel_fuel_update(KaTZPit_data)}	
 	if (Panel_On["UV26"]==1){panel_uv26_update(KaTZPit_data)}
 	if (Panel_On["Light"]==1){panel_electric_light(KaTZPit_data)}	
+	if (Panel_On["Stick"]==1){panel_pilototo_input(KaTZPit_data)}
 	
 	
 	CmdSend()

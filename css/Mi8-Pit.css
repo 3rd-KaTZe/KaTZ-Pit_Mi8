@@ -176,6 +176,20 @@ p {
 
 }
 
+#Panel_Stick {
+
+	position: absolute;
+	top: 760px;
+	left: 1340px;
+	/* Dimension 300 x 300			              */
+	font-family:arial, sans-serif;
+	font-size:100%;
+	color:white;
+	background-color:transparent;
+	text-align: center; 
+
+}
+
 #Panel_Circuit_Breaker {
 	position: absolute;
 	top: 20px;
