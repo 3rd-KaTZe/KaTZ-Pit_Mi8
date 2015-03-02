@@ -45,6 +45,83 @@ function panel_uv26_update(KaTZPit_data){
 
 }
 
+function panel_weapon_1(KaTZPit_data){
+
+	// Voyants de présence Weaponstation
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],6) ==1) {$("#WPN-Pre1").fadeIn()} else {$("#WPN-Pre1").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],5) ==1) {$("#WPN-Pre2").fadeIn()} else {$("#WPN-Pre2").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],4) ==1) {$("#WPN-Pre3").fadeIn()} else {$("#WPN-Pre3").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],3) ==1) {$("#WPN-Pre4").fadeIn()} else {$("#WPN-Pre4").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],2) ==1) {$("#WPN-Pre5").fadeIn()} else {$("#WPN-Pre5").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],1) ==1) {$("#WPN-Pre6").fadeIn()} else {$("#WPN-Pre6").fadeOut()}
+	
+	// Switch Master Arm
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],3) ==1) {$("#Wpn_Master_SW").attr('src','images/switch/Switch-Metal-U4.png')} 
+	else {$("#Wpn_Master_SW").attr('src','images/switch/Switch-Metal-D4.png')}
+	
+	// Switch Man/auto
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],2) ==1) {$("#Wpn_Main_SW").attr('src','images/switch/Switch-Metal-U4.png')} 
+	else {$("#Wpn_Main_SW").attr('src','images/switch/Switch-Metal-D4.png')}
+
+	var WpnSelect = dataread_posit(KaTZPit_data["Wpn_Flag"],1) + 5
+	if (WpnSelect == 0 ){
+	document.getElementById('WPN-Type1').innerHTML = "R"
+	document.getElementById('WPN-Type2').innerHTML = "R"
+	document.getElementById('WPN-Type3').innerHTML = "R"
+	document.getElementById('WPN-Type4').innerHTML = "R"
+	document.getElementById('WPN-Type5').innerHTML = "R"
+	document.getElementById('WPN-Type6').innerHTML = "R"
+	}
+	
+	if (WpnSelect == 1 ){
+	document.getElementById('WPN-Type1').innerHTML = "B"
+	document.getElementById('WPN-Type2').innerHTML = "B"
+	document.getElementById('WPN-Type3').innerHTML = "B"
+	document.getElementById('WPN-Type4').innerHTML = "B"
+	document.getElementById('WPN-Type5').innerHTML = "B"
+	document.getElementById('WPN-Type6').innerHTML = "B"
+	}
+	if (WpnSelect == 2 ){
+	document.getElementById('WPN-Type1').innerHTML = "B"
+	document.getElementById('WPN-Type2').innerHTML = "B"
+	document.getElementById('WPN-Type3').innerHTML = "R"
+	document.getElementById('WPN-Type4').innerHTML = "R"
+	document.getElementById('WPN-Type5').innerHTML = "B"
+	document.getElementById('WPN-Type6').innerHTML = "B"
+	}
+	if (WpnSelect == 3 ){
+	document.getElementById('WPN-Type1').innerHTML = "--"
+	document.getElementById('WPN-Type2').innerHTML = "HB"
+	document.getElementById('WPN-Type3').innerHTML = "R"
+	document.getElementById('WPN-Type4').innerHTML = "R"
+	document.getElementById('WPN-Type5').innerHTML = "HB"
+	document.getElementById('WPN-Type6').innerHTML = "--"
+	}
+	if (WpnSelect == 4 ){
+	document.getElementById('WPN-Type1').innerHTML = "--"
+	document.getElementById('WPN-Type2').innerHTML = "HB"
+	document.getElementById('WPN-Type3').innerHTML = "B"
+	document.getElementById('WPN-Type4').innerHTML = "B"
+	document.getElementById('WPN-Type5').innerHTML = "HB"
+	document.getElementById('WPN-Type6').innerHTML = "--"
+	}
+	if (WpnSelect == 5 ){
+	document.getElementById('WPN-Type1').innerHTML = "G"
+	document.getElementById('WPN-Type2').innerHTML = "G"
+	document.getElementById('WPN-Type3').innerHTML = "G"
+	document.getElementById('WPN-Type4').innerHTML = "G"
+	document.getElementById('WPN-Type5').innerHTML = "G"
+	document.getElementById('WPN-Type6').innerHTML = "G"
+
+	}
+	
+	
+
+
+
+
+}
+
 
 
 

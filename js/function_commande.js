@@ -101,6 +101,20 @@ function CmdSiocDCS2(Element) {
 		
 }
 
+// Fonction de commande multiple (en rafale de trois) usage possible pour les Switches avec un capot
+function CmdSiocDCS3(Cmd1,Cmd2,Cmd3) {
+
+	// Ouverture du Capot
+	if (Cmd1>0) {CmdDCSRaw(Cmd1)}
+	
+	// Basculement de l'interrupteur
+	if (Cmd2>0) {CmdDCSRaw(Cmd2)}
+	
+	// Fermeture du capot
+	if (Cmd3>0) {CmdDCSRaw(Cmd3)}
+
+}
+
 function CmdDCSRaw(Cmd){
 
 var commande_DCS = "2="+ Cmd

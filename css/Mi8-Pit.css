@@ -349,6 +349,18 @@ p {
 	
 }
 
+#Panel_Weapon_1 {
+	position: absolute;
+	top: 010px;
+	left: 1810px;
+	/* Dimension 500 x 350			              */
+	font-family:arial, sans-serif;
+	font-size:130%;
+	color:green;
+	text-align: center; 
+	
+}
+
 
 
 

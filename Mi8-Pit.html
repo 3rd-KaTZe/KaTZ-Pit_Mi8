@@ -448,7 +448,7 @@
 		<area shape="rect" coords="10,620,90,680" href="javascript:menu_Toggle('ARK_9')">
 		<area shape="rect" coords="10,680,90,720" href="javascript:menu_Toggle('ARK_UD')">
 		<area shape="rect" coords="10,720,90,780" href="javascript:menu_Toggle('Vierge')">
-		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('UV26')">
+		<area shape="rect" coords="10,780,90,820" href="javascript:menu_Toggle('Combat')">
 		<area shape="rect" coords="10,820,90,880" href="javascript:menu_Toggle('Vierge')">
 		<area shape="rect" coords="10,880,90,920" href="javascript:menu_Toggle('Radio_360')">
 		<area shape="rect" coords="10,920,90,980" href="javascript:menu_Toggle('Stick')">
@@ -1250,6 +1250,82 @@
 	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_On"> </SPAN>
 	
 </div>
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+<div id="Panel_Weapon_1">
+
+	<img src="images/weapon/Weapon_1.png" width="500" height="350" usemap="#WPN_1">
+
+	<map name="WPN_1">
+
+								
+			<!-- Payload Selection -->
+			<area shape="rect" coords="170,160,330,181" href="javascript:CmdDCSRaw('41201300')">
+			<area shape="rect" coords="170,182,330,203" href="javascript:CmdDCSRaw('41201301')">
+			<area shape="rect" coords="170,204,330,225" href="javascript:CmdDCSRaw('41201302')">
+			<area shape="rect" coords="170,226,330,247" href="javascript:CmdDCSRaw('41201303')">
+			<area shape="rect" coords="170,248,330,269" href="javascript:CmdDCSRaw('41201304')">
+			<area shape="rect" coords="170,270,330,292" href="javascript:CmdDCSRaw('41201305')">
+
+			<!-- Emergency Jettison Bomb Only -->
+			<area shape="rect" coords="360,160,400,300" href="javascript:CmdSiocDCS3('11205001','51203201','0')">
+
+			<!-- Emergency Jettison Bomb + Pod -->
+			<area shape="rect" coords="430,160,470,300" href="javascript:CmdSiocDCS3('11205201','51200501','0')">
+			
+	
+	</map> 
+	
+	<!-- Switch Master Arm -->
+	<SPAN style="position: absolute; left: 38px; top: 200px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_Master_SW" usemap="#Wpn_marm"> 
+	<map name="Wpn_marm">	
+	<area shape="rect" coords="0,0,40,49"  href="javascript:CmdDCSRaw('11202701')"> 
+	<area shape="rect" coords="0,50,40,100"  href="javascript:CmdDCSRaw('11202700')"> 
+	</map>
+	</SPAN>
+	
+	<!-- Switch Main Arm -->
+	<SPAN style="position: absolute; left: 116px; top: 200px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_Main_SW" usemap="#Wpn_Main"> 
+	<map name="Wpn_Main">	
+	<area shape="rect" coords="0,0,40,49"  href="javascript:CmdDCSRaw('11203001')"> 
+	<area shape="rect" coords="0,50,40,100"  href="javascript:CmdDCSRaw('11203000')"> 
+	</map>
+	</SPAN>
+
+
+	<!-- Voyant presence weapon -->
+	<SPAN style="position: absolute; left: 35px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre1">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 95px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre2">	</SPAN>
+
+	<SPAN style="position: absolute; left: 155px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre3">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 315px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre4">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 375px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre5">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 435px; top: 70px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_vert.gif" width="30" height="30"  id="WPN-Pre6">	</SPAN>
+
+	<!-- Affichage Type Arme -->
+	<SPAN style="position: absolute; left: 30px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type1">	</SPAN>
+	<SPAN style="position: absolute; left: 90px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type2">	</SPAN>
+	<SPAN style="position: absolute; left: 150px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type3">	</SPAN>
+	<SPAN style="position: absolute; left: 310px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type4">	</SPAN>
+	<SPAN style="position: absolute; left: 370px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type5">	</SPAN>
+	<SPAN style="position: absolute; left: 430px; top: 112px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-Type6">	</SPAN>
+	
+	
+	
+</div>
+
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 
 <div id="Panel_Light">
