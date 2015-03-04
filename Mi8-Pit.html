@@ -1200,17 +1200,7 @@
 	<img src="images/weapon/UV26.png" width="250" height="480" usemap="#UV26_P">
 
 	<map name="UV26_P">
-
-								
-			<!-- Bouton Side Left-Right -->
-			<area shape="rect" coords="0,110,45,150" href="javascript:CmdDCSRaw('14800200')">
-			<area shape="rect" coords="45,110,90,150" href="javascript:CmdDCSRaw('44800205')">
-			<area shape="rect" coords="90,110,125,150" href="javascript:CmdDCSRaw('14800201')">
-			
-			<!-- Bouton Quant Num -->
-			<area shape="rect" coords="130,110,175,150" href="javascript:CmdDCSRaw('14800300')">
-			<area shape="rect" coords="200,110,250,150" href="javascript:CmdDCSRaw('14800301')">
-			
+				
 			<!-- Boutons Programme -->
 			<area shape="rect" coords="40,210,110,270" href="javascript:CmdDCSRaw('54800401')">
 			<area shape="rect" coords="140,210,210,270" href="javascript:CmdDCSRaw('54800601')">
@@ -1218,13 +1208,8 @@
 			<area shape="rect" coords="140,280,210,340" href="javascript:CmdDCSRaw('54800801')">
 			<area shape="rect" coords="40,350,110,410" href="javascript:CmdDCSRaw('54800901')">
 			<area shape="rect" coords="140,350,210,410" href="javascript:CmdDCSRaw('54800701')">
-			
-			<!-- Bouton On Off -->
-			<area shape="rect" coords="10,430,70,470" href="javascript:CmdDCSRaw('14801000')">
-			<area shape="rect" coords="180,430,240,470" href="javascript:CmdDCSRaw('14801001')">
+
 	</map> 
-	
-	
 	
 	<!-- Voyant Left Right -->
 	<SPAN style="position: absolute; left: 10px; top: 40px; width: 20px; height: 20px">
@@ -1248,6 +1233,31 @@
 	<!-- Selecteur On / Off-->
 	<SPAN style="position: absolute; left: 86px; top: 407px; width: 80px; height: 80px">
 	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_On"> </SPAN>
+	
+	<!-- Selecteur Side , Quant/Num , On/OFF-->
+	<SPAN style="position: absolute; left: 30px; top: 132px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_LR" usemap="#UV_LR"> </SPAN>
+	<map name="UV_LR">	
+	<area shape="rect" coords="0,0,32,40"  href="javascript:CmdDCSRaw('14800200')"> 
+	<area shape="rect" coords="33,0,66,40"  href="javascript:CmdDCSRaw('44800205')"> 
+	<area shape="rect" coords="66,0,100,40"  href="javascript:CmdDCSRaw('14800201')"> 
+	</map> </SPAN>
+	
+	<SPAN style="position: absolute; left: 140px; top: 132px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_Num" usemap="#UV_Num"> </SPAN>
+	<map name="UV_Num">	
+	<area shape="rect" coords="0,0,49,40"  href="javascript:CmdDCSRaw('14800300')"> 
+	<area shape="rect" coords="50,0,100,40"  href="javascript:CmdDCSRaw('14800301')"> 
+	</map> </SPAN>
+	
+	<SPAN style="position: absolute; left: 85px; top: 407px; width: 80px; height: 80px">
+	<img src="images/Switch-Metal-L3.gif" width="80" height="80" id="UV_SW_On" usemap="#UV_On"> 
+	<map name="UV_On">	
+	<area shape="rect" coords="0,0,49,40"  href="javascript:CmdDCSRaw('14801000')"> 
+	<area shape="rect" coords="50,0,100,40"  href="javascript:CmdDCSRaw('14801001')"> 
+	</map> </SPAN>
+	
+	
 	
 </div>
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
@@ -1325,6 +1335,126 @@
 	
 	
 </div>
+
+
+<!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
+
+
+<div id="Panel_Weapon_2">
+
+	<img src="images/weapon/Weapon_2.png" width="500" height="500" usemap="#WPN_2">
+
+	<map name="WPN_2">
+
+			<!-- Salvo Selection -->
+			<area shape="circle" coords="390,220,20" href="javascript:CmdDCSRaw('41204300')">
+			<area shape="circle" coords="425,230,20" href="javascript:CmdDCSRaw('41204303')">
+			<area shape="circle" coords="455,250,20" href="javascript:CmdDCSRaw('41204306')">
+			<area shape="circle" coords="475,280,20" href="javascript:CmdDCSRaw('41204308')">
+			<area shape="circle" coords="480,320,20" href="javascript:CmdDCSRaw('11204301')">
+	
+	</map> 
+	
+	<!-- Switch UPK -->
+	<SPAN style="position: absolute; left: 120px; top: 60px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_UPK_SW" usemap="#Wpn_UPK"> 
+	<map name="Wpn_UPK">	
+	<area shape="rect" coords="0,0,40,49"  href="javascript:CmdDCSRaw('31202202')"> 
+	<area shape="rect" coords="0,50,40,100"  href="javascript:CmdDCSRaw('31202200')"> 
+	</map>
+	</SPAN>
+	
+	<!-- Switch XPod 4/8/16-->
+	<SPAN style="position: absolute; left: 220px; top: 60px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_XPod_SW" usemap="#Wpn_XPod"> 
+	<map name="Wpn_XPod">	
+	<area shape="rect" coords="0,0,40,32"  href="javascript:CmdDCSRaw('31202002')"> 
+	<area shape="rect" coords="0,33,40,66"  href="javascript:CmdDCSRaw('31202001')"> 
+	<area shape="rect" coords="0,67,40,100"  href="javascript:CmdDCSRaw('31202000')">
+	</map>
+	</SPAN>
+	
+	<!-- Switch FPod -->
+	<SPAN style="position: absolute; left: 330px; top: 60px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-C4V.png" width="40" height="100"   id="Wpn_FPod_SW" usemap="#Wpn_FPod">
+	<map name="Wpn_FPod">	
+	<area shape="rect" coords="0,0,40,32"  href="javascript:CmdDCSRaw('31202102')"> 
+	<area shape="rect" coords="0,33,40,66"  href="javascript:CmdDCSRaw('31202101')"> 
+	<area shape="rect" coords="0,67,40,100"  href="javascript:CmdDCSRaw('31202100')">
+	</map>
+	</SPAN>	
+	
+	<!-- Switch Grenade 7.62 12.7 -->
+	<SPAN style="position: absolute; left: 120px; top: 220px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-C4V.png" width="40" height="100"   id="Wpn_Gre1_SW" usemap="#Wpn_Gre1">
+	<map name="Wpn_Gre1">	
+	<area shape="rect" coords="0,0,40,32"  href="javascript:CmdDCSRaw('41204201')"> 
+	<area shape="rect" coords="0,33,40,66"  href="javascript:CmdDCSRaw('41204203')"> 
+	<area shape="rect" coords="0,67,40,100"  href="javascript:CmdDCSRaw('41204202')">
+	</map>
+	</SPAN>	
+	
+	<!-- Switch Grenade Mix Commande Triple avec Capot-->
+	<SPAN style="position: absolute; left: 220px; top: 220px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_Gre2_SW" usemap="#Wpn_Gre2"> 
+	<map name="Wpn_Gre2">	
+	<area shape="rect" coords="0,0,40,49"  href="javascript:CmdSiocDCS3('11205301','11204101','11205300')"> 
+	<area shape="rect" coords="0,50,40,100"  href="javascript:CmdSiocDCS3('11205301','11204100','11205300')"> 
+	</map>
+	</SPAN>
+	
+	<!-- Switch Salvo -->
+	<SPAN style="position: absolute; left: 310px; top: 220px; width: 40px; height: 100px">
+	<img src="images/switch/Switch-Metal-D4.png" width="40" height="100" id="Wpn_Salvo_SW" usemap="#Wpn_Salvo"> 
+	<map name="Wpn_Salvo">	
+	<area shape="rect" coords="0,0,40,49"  href="javascript:CmdDCSRaw('11200601')"> 
+	<area shape="rect" coords="0,50,40,100"  href="javascript:CmdDCSRaw('11200600')"> 
+	</map>
+	</SPAN>
+	
+	<!-- Molette du Selecteur Salvo -->
+	<SPAN style="position: absolute; left: 360px; top: 240px; width: 60px; height: 150px">
+	<img src="images/switch/Selecteur_demi.gif" width="60" height="150" id="wpn_Selec_Salvo">
+	</SPAN>
+	
+	<!-- Selecteur Charge 127 Commande double, on bascule les deux (Left Right) en même temps-->
+	<SPAN style="position: absolute; left: 80px; top: 402px; width: 100px; height: 40px">
+	<img src="images/switch/Switch-Metal-C4H.png" width="100" height="40" id="Wpn_Charge_SW" usemap="#Wpn_Charge"> </SPAN>
+	<map name="Wpn_Charge">	
+	<area shape="rect" coords="0,0,32,40"  href="javascript:CmdSiocDCS3('41204401','41204501','0')"> 
+	<area shape="rect" coords="33,0,66,40"  href="javascript:CmdSiocDCS3('41204402','41204502','0')"> 
+	<area shape="rect" coords="66,0,100,40"  href="javascript:CmdSiocDCS3('41204403','41204503','0')"> 
+	</map> </SPAN>
+
+
+	<!-- Voyant CCT -->
+	<SPAN style="position: absolute; left: 20px; top: 85px; width: 80px; height: 50px">
+	<img src="images/weapon/CCT_Rocket_On.png" width="80" height="50"  id="WPN_CCT_R">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 20px; top: 245px; width: 80px; height: 50px">
+	<img src="images/weapon/CCT_Gun_On.png" width="80" height="50"  id="WPN_CCT_G">	</SPAN>
+	
+	
+	
+	<!-- Voyant Remaining Round -->
+	<SPAN style="position: absolute; left: 285px; top: 399px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_rouge.gif" width="30" height="30"  id="WPN-GUV1">	</SPAN>
+	
+	<SPAN style="position: absolute; left: 343px; top: 399px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_rouge.gif" width="30" height="30"  id="WPN-GUV2">	</SPAN>
+
+	<SPAN style="position: absolute; left: 405px; top: 399px; width: 30px; height: 30px">
+	<img src="images/weapon/Btn-Rd_rouge.gif" width="30" height="30"  id="WPN-GUV3">	</SPAN>
+	
+
+	<!-- Affichage Qty Round -->
+	<SPAN style="position: absolute; left: 280px; top: 440px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-GUVQ1">	</SPAN>
+	<SPAN style="position: absolute; left: 340px; top: 440px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-GUVQ2">	</SPAN>
+	<SPAN style="position: absolute; left: 403px; top: 440px; width: 40px; height: 30px ; text-align:center; color:green" id="WPN-GUVQ3">	</SPAN>
+	
+	
+</div>
+
 
 <!-- xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx -->
 

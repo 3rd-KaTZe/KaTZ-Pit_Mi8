@@ -358,6 +358,17 @@ p {
 	font-size:130%;
 	color:green;
 	text-align: center; 
+}
+
+#Panel_Weapon_2 {
+	position: absolute;
+	top: 360px;
+	left: 1810px;
+	/* Dimension 500 x 500		              */
+	font-family:arial, sans-serif;
+	font-size:130%;
+	color:green;
+	text-align: center; 
 	
 }
 

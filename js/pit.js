@@ -66,7 +66,8 @@ function pit_main(){
 	if (Panel_On["Fuel"]==1){panel_fuel_update(KaTZPit_data)}	
 	if (Panel_On["Combat"]==1){
 		panel_uv26_update(KaTZPit_data);
-		panel_weapon_1(KaTZPit_data)
+		panel_weapon_1(KaTZPit_data);
+		panel_weapon_2(KaTZPit_data)
 
 	}
 	if (Panel_On["Light"]==1){panel_electric_light(KaTZPit_data)}	
