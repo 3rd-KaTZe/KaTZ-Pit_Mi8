@@ -11,36 +11,29 @@ function panel_uv26_update(KaTZPit_data){
 	
 	
 	// Switch Quant/Num
-	if (dataread_posit(KaTZPit_data["UV26_Flag"],2) ==1) {$("#UV_SW_Num").attr('src','images/Switch-Metal-R3.gif')} 
-	else {$("#UV_SW_Num").attr('src','images/Switch-Metal-L3.gif')}
+	if (dataread_posit(KaTZPit_data["UV26_Flag"],2) ==1) {$("#UV_SW_Num").attr('src','images/switch/Switch-Metal-R4.png')} 
+	else {$("#UV_SW_Num").attr('src','images/switch/Switch-Metal-L4.png')}
 	
 	// Switch Left/Both/Right
-	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==2) {$("#UV_SW_LR").attr('src','images/Switch-Metal-R3.gif')} 
-	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==1) {$("#UV_SW_LR").attr('src','images/Switch-Metal-U3.gif')} 
-	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==0) {$("#UV_SW_LR").attr('src','images/Switch-Metal-L3.gif')} 
+	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==2) {$("#UV_SW_LR").attr('src','images/switch/Switch-Metal-R4.png')} 
+	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==1) {$("#UV_SW_LR").attr('src','images/switch/Switch-Metal-C4H.png')} 
+	if (dataread_posit(KaTZPit_data["UV26_Flag"],1) ==0) {$("#UV_SW_LR").attr('src','images/switch/Switch-Metal-L4.png')} 
 	
 	// Switch On / Off
 	if (dataread_posit(KaTZPit_data["UV26_Flag"],5) ==1) {
 		
-		$("#UV_SW_On").attr('src','images/Switch-Metal-R3.gif')
+		$("#UV_SW_On").attr('src','images/switch/Switch-Metal-R4.png')
 		// Allumage de l'affichage digital
 		document.getElementById("UV26_flare").style.display = "block"
 		// Affichage Flare restantes
 		document.getElementById('UV26_flare').innerHTML = dataread_split_2(KaTZPit_data["UV26_Data"])[0]
-		
-	
-} 
+	} 
 	else {
 		// Affichage du switch en position off (pas encore implémenté sur KA)
-		$("#UV_SW_On").attr('src','images/Switch-Metal-L3.gif')
+		$("#UV_SW_On").attr('src','images/switch/Switch-Metal-L4.png')
 		// Extinction de l'affichage digital
 		document.getElementById("UV26_flare").style.display = "none"
 	}
-	
-	
-	// Affichage Flare restantes
-	//document.getElementById('UV26_flare').innerHTML = dataread_split_2(KaTZPit_data["UV26_Data"])[0]
-	
 
 }
 
