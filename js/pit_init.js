@@ -23,7 +23,7 @@ function paneldata_init(){
 		E_DC_V:55555, E_AC_V:5555,	E_DC_SW:55555555, E_AC_SW:55555, E_NavLight:55555555,
 		AP_KA1:5555, AP_KA2:555,
 		Cockpit:0, Train:555555, WheelBrk:0, BrakePress:0,
-		Wpn_Lamp:555555, Wpn_Flag:550,Wpn_Ammo:555555,Wpn_SW_1:555555, Wpn_1:550,Wpn_2:5555,Wpn_3:555055,
+		Wpn_Lamp:555555, Wpn_Flag:550,Wpn_Ammo:555555,Wpn_SW_1:5555555, Wpn_1:550,Wpn_2:5555555,Wpn_3:5555500,
 		ARKUD:55500555,	ARK9_SW:55555, ARK9_F: 51506290, ARK9_Data:50005000, ARK9_T_Main:150, ARK9_T_Stby:150,Nav_Fl:5,
 		Doppler_d1:50005000, Doppler_d2:50005000, Doppler_f:555,
 		D15_drift:50005000, D15_drift_V:55, Sling_2D:50005000, Sling_3D:50005000, 
@@ -59,7 +59,7 @@ function panel_On_init(){
 var Panel_On = { Init:0, Breakers:1, Electric_DC:1, Electric_AC:1, Light:0,
 	APU:1,  Start:1, Rotor:0, Oil:1, Fuel:0,
 	Analog_1:1, Analog_2:0, Stick:0,
-	ARK_9:0, ARK_UD:0, Doppler:1, Weapon:1, Combat:1,
+	ARK_9:0, ARK_UD:0, Doppler:1, Weapon:0, Combat:0,
 	Radio_360:0, Vierge:0, Navigation:0, Target:0, UV26:0 }
 
 return (Panel_On);
