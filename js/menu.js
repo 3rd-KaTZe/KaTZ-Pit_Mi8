@@ -89,10 +89,11 @@ function menu_Toggle(panel){
 	document.getElementById("Panel_Weapon_1").style.display = "none" ;
 	document.getElementById("Panel_Weapon_2").style.display = "none" ;
 	document.getElementById("Panel_UV26").style.display = "none";
-	document.getElementById("Panel_Electric_AC").style.display = "block";
-	document.getElementById("Panel_Electric_DC").style.display = "block";
-	document.getElementById("Panel_APU").style.display = "block";
-	document.getElementById("Panel_Start").style.display = "block";	
+		if (Panel_On["Electric_AC"] == 1){document.getElementById("Panel_Electric_AC").style.display = "block"};
+		if (Panel_On["Electric_DC"] == 1){document.getElementById("Panel_Electric_DC").style.display = "block"};
+		if (Panel_On["APU"] == 1) {document.getElementById("Panel_APU").style.display = "block"};
+		if (Panel_On["Start"] == 1) {document.getElementById("Panel_Start").style.display = "block"};
+		
 	document.getElementById("Cadran_Clock").style.display = "block"
 	
 	}
@@ -106,13 +107,10 @@ function menu_Toggle(panel){
 	document.getElementById("Panel_APU").style.display = "none";
 	document.getElementById("Panel_Start").style.display = "none";
 	document.getElementById("Cadran_Clock").style.display = "none"
+	menu_reload_weapon_data()
 	
 		
 	}
-	
-	
-	
-
 		
 }
 
@@ -127,4 +125,13 @@ function menu_ARK9_init(){
 
 }
 
+function menu_reload_weapon_data(){
+
+	CmdSiocSpe(1014,0) ; 
+	CmdSiocSpe(1016,0) ;
+	CmdSiocSpe(1018,0) ;
+	CmdSiocSpe(1021,0) ;
+	CmdSiocSpe(1022,0) ;
+	CmdSiocSpe(1023,0) ;
 	
+}

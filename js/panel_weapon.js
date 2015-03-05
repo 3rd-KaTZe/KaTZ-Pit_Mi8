@@ -47,6 +47,13 @@ function panel_weapon_1(KaTZPit_data){
 	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],2) ==1) {$("#WPN-Pre5").fadeIn()} else {$("#WPN-Pre5").fadeOut()}
 	if (dataread_posit(KaTZPit_data["Wpn_Lamp"],1) ==1) {$("#WPN-Pre6").fadeIn()} else {$("#WPN-Pre6").fadeOut()}
 	
+	// Voyants d'armement des Weaponstation
+	// Voyant n°1 >> WPS 1et2 , n°3>WPS3 , n°4>>WPS4 , n°6 >> WPS 5 et 6
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],4) ==1) {$("#WPN-Arm1").fadeIn() ; $("#WPN-Arm2").fadeIn()} else {$("#WPN-Arm1").fadeOut() ; $("#WPN-Arm2").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],3) ==1) {$("#WPN-Arm3").fadeIn()} else {$("#WPN-Arm3").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],2) ==1) {$("#WPN-Arm4").fadeIn()} else {$("#WPN-Arm4").fadeOut()}
+	if (dataread_posit(KaTZPit_data["Wpn_Flag"],1) ==1) {$("#WPN-Arm5").fadeIn() ; $("#WPN-Arm6").fadeIn()} else {$("#WPN-Arm5").fadeOut() ; $("#WPN-Arm6").fadeOut()}
+	
 	// Switch Master Arm
 	if (dataread_posit(KaTZPit_data["Wpn_1"],3) ==1) {$("#Wpn_Master_SW").attr('src','images/switch/Switch-Metal-U4.png')} 
 	else {$("#Wpn_Master_SW").attr('src','images/switch/Switch-Metal-D4.png')}
@@ -160,9 +167,9 @@ function panel_weapon_2(KaTZPit_data){
 	if (dataread_posit(KaTZPit_data["Wpn_2"],6) ==1) {$("#WPN-GUV2").fadeIn()} else {$("#WPN-GUV2").fadeOut()}
 	if (dataread_posit(KaTZPit_data["Wpn_2"],5) ==1) {$("#WPN-GUV3").fadeIn()} else {$("#WPN-GUV3").fadeOut()}
 	
-	var Wpn1 = (dataread_posit(KaTZPit_data["Wpn_Ammo"],2)+5) *100 + (dataread_posit(KaTZPit_data["Wpn_Ammo"],1)+5) *10
+	var Wpn3 = (dataread_posit(KaTZPit_data["Wpn_Ammo"],2)+5) *100 + (dataread_posit(KaTZPit_data["Wpn_Ammo"],1)+5) *10
 	var Wpn2 = (dataread_posit(KaTZPit_data["Wpn_Ammo"],4)+5)*100 + (dataread_posit(KaTZPit_data["Wpn_Ammo"],3)+5)*10
-	var Wpn3 = (dataread_posit(KaTZPit_data["Wpn_Ammo"],6)+5)*100 + (dataread_posit(KaTZPit_data["Wpn_Ammo"],5)+5)*10
+	var Wpn1 = (dataread_posit(KaTZPit_data["Wpn_Ammo"],6)+5)*100 + (dataread_posit(KaTZPit_data["Wpn_Ammo"],5)+5)*10
 	
 	
 	document.getElementById('WPN-GUVQ1').innerHTML = Wpn1
