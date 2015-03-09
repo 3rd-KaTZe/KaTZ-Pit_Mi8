@@ -64,6 +64,7 @@ function pit_main(){
 	if (Panel_On["ARK_9"]==1){panel_ark9_update(KaTZPit_data)}
 	if (Panel_On["ARK_UD"]==1){panel_arkud_update(KaTZPit_data)}
 	if (Panel_On["Fuel"]==1){panel_fuel_update(KaTZPit_data)}	
+	if (Panel_On["Target"]==1){panel_target_update(KaTZPit_data)}	
 	if (Panel_On["Combat"]==1){
 		panel_uv26_update(KaTZPit_data);
 		panel_weapon_1(KaTZPit_data);

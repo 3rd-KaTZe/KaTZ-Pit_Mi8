@@ -264,8 +264,8 @@ p {
 
 #Panel_Rotor {
 	position: absolute;
-	top: 870px;
-	left: 10px;
+	top: 10px;
+	left: 950px;
 	/* Dimension 340 x 200			              */
 	font-family:arial, sans-serif;
 	font-size:100%;
@@ -370,6 +370,15 @@ p {
 	color:green;
 	text-align: center; 
 	
+}
+
+#Panel_Target {
+	position: absolute;
+	top: 010px;
+	left: 2580px;
+
+	font-family:arial, sans-serif;
+	text-align: center; 
 }
 
 

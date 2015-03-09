@@ -75,6 +75,9 @@ function menu_Toggle(panel){
 	if (Panel_On["Light"] == 0) {document.getElementById("Panel_Light").style.display = "none"}
 	else {document.getElementById("Panel_Light").style.display = "block"}
 	
+	if (Panel_On["Target"] == 0) {document.getElementById("Panel_Target").style.display = "none"}
+	else {document.getElementById("Panel_Target").style.display = "block"}
+	
 	if (Panel_On["Stick"] == 0) {
 	document.getElementById("Panel_Stick").style.display = "none" ;
 	document.getElementById("Cadran_Drift").style.display = "block" ;	
