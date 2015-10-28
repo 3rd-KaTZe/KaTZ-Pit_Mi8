@@ -46,9 +46,6 @@ function menu_Toggle(panel){
 	if (Panel_On["Fuel"] == 0) {document.getElementById("Panel_Fuel").style.display = "none"}
 	else {document.getElementById("Panel_Fuel").style.display = "block"}
 
-	if (Panel_On["Radio_360"] == 0) {document.getElementById("Panel_Radio").style.display = "none"}
-	else {document.getElementById("Panel_Radio").style.display = "block"}
-
 	if (Panel_On["Breakers"] == 0) {document.getElementById("Panel_Circuit_Breaker").style.display = "none"}
 	else {document.getElementById("Panel_Circuit_Breaker").style.display = "block"}
 	
@@ -75,8 +72,6 @@ function menu_Toggle(panel){
 	if (Panel_On["Light"] == 0) {document.getElementById("Panel_Light").style.display = "none"}
 	else {document.getElementById("Panel_Light").style.display = "block"}
 	
-	if (Panel_On["Target"] == 0) {document.getElementById("Panel_Target").style.display = "none"}
-	else {document.getElementById("Panel_Target").style.display = "block"}
 	
 	if (Panel_On["Stick"] == 0) {
 	document.getElementById("Panel_Stick").style.display = "none" ;

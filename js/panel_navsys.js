@@ -236,7 +236,12 @@ function panel_doppler_update(KaTZPit_data) {
 
 		document.getElementById('Dop_Drift').innerHTML = (Doppler_dat1[0]/10).toFixed(1)
 		document.getElementById('Dop_Flight').innerHTML = (Doppler_dat1[1]/10).toFixed(1)
-		document.getElementById('Dop_Map').innerHTML = (Doppler_dat2[1]/10).toString()+"&deg"+(Doppler_dat2[0]).toString()
+		
+		// Ajout d'un zero significatif aux minutes
+		var Doppler_min = (Doppler_dat2[0]).toString()
+		if (Doppler_dat2[0]<10) { Doppler_min = "0" + (Doppler_dat2[0]).toString() }
+				
+		document.getElementById('Dop_Map').innerHTML = (Doppler_dat2[1]/10).toString()+"&deg"+ Doppler_min
 		
 		if (dataread_posit(KaTZPit_data["Doppler_f"],2) ==0) {document.getElementById('Dop_DFlag').innerHTML = "Left"}
 		else {document.getElementById('Dop_DFlag').innerHTML = "Right"}
